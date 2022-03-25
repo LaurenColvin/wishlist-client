@@ -8,6 +8,23 @@
   --pink: #FA5272;
 }
 
+/* FONT LINKS */
+@font-face {
+  font-family: Breadley;
+  src: url("assets/BreadleySans-Regular.ttf");
+  font-size: 100%;
+}
+
+@font-face {
+  font-family: Nesans;
+  src: url("assets/Nesans\ Semi\ Bold.ttf");
+  font-size: 100%;
+}
+
+* {
+  font-family: Breadley;
+}
+
 .App {
   text-align: center;
 }
@@ -49,17 +66,20 @@ nav {
   text-decoration: none;
 }
 
-nav h3, h4 {
+nav h3 {
   color: var(--cognac);
   margin: 0 30px;
 }
 
-nav h3:hover, h4:hover {
+nav h3:hover {
   color: var(--pink)
 }
 
 nav h1 {
   color: var(--cognac);
+  font-family: Nesans;
+  font-size: 2.5em;
+  margin: 20px;
 }
 
 nav h1:hover {
@@ -74,7 +94,7 @@ nav h1:hover {
 
 .home-page {
   background-image:  url('./assets/hero-image.png');
-  height: 100vh;
+  height: 80vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -82,8 +102,8 @@ nav h1:hover {
 }
 
 .home-page h1 {
-  font-size: 4.5em;
-  line-height: 1.3em;
+  font-size: 5.5em;
+  line-height: 1em;
   letter-spacing: .05em;
   color: var(--cream);
   margin: 0;
@@ -112,13 +132,13 @@ nav h1:hover {
 
 footer {
   background-color: var(--green);
-  position: fixed;
-  bottom: 0;
   width: 100%;
+  margin: 0;
+  padding: 5px;
 }
 
 footer p {
   font-size: .5em;
   text-align: right;
-  margin: 30px;
+  margin: 20px;
 }
