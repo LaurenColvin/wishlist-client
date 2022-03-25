@@ -27,12 +27,22 @@
 
 .App {
   text-align: center;
+  background-color: var(--base);
+}
+
+.main {
+  margin-top: 80px;
+}
+
+body {
+  background-color: var(--base);
 }
 
 /* NAV BAR STYLING */
 
 nav {
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 3;
   display: flex;
@@ -40,7 +50,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   background-color: var(--base);
-  border: 1px, solid;
+  border-bottom: 1px solid;
   border-color: var(--pink);
 }
 
@@ -88,14 +98,10 @@ nav h1:hover {
 
 /* HOME STYLING */
 
-/* .home-page {
-  margin: 0 30%;
-} */
-
-.home-page {
+.hero-image {
   background-image:  url('./assets/hero-image.png');
-  height: 80vh;
-  background-position: center;
+  height: 100vh;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -107,7 +113,7 @@ nav h1:hover {
   letter-spacing: .05em;
   color: var(--cream);
   margin: 0;
-  padding-top: 30vh;
+  padding-top: 40vh;
   padding-bottom: 50px;
 }
 
@@ -127,6 +133,97 @@ nav h1:hover {
   border-color: var(--pink);
 }
 
+/* TRENDING STYLING */
+
+.trending {
+  background-color: var(--base);
+  margin: 0;
+  height: 60vh;
+}
+
+.trending h2 {
+  margin: 0;
+  padding: 65px;
+  font-size: 3em;
+  color: var(--cognac);
+}
+
+.trending h3 {
+  font-size: 2.5em;
+  padding: 0px 40px;
+  color: var(--base);
+}
+
+.trending h3:hover {
+  color: var(--pink);
+}
+
+.category-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20%;
+}
+
+.trending-category {
+  background-color: var(--green);
+  width: 30%;
+  height: 200px;
+  margin-bottom: 50px;
+  border: 2px solid;
+  border-color: var(--pink);
+}
+
+/* INSTRUCTIONS STYLING */
+
+.instructions {
+  background-color: var(--green);
+}
+
+.instructions h2 {
+  color: var(--cream);
+  font-size: 3.5em;
+  padding: 50px 0 0 0;
+}
+
+.instructions span {
+  font-family: Nesans;
+}
+
+.instructions-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 5%;
+  padding-bottom: 55px;
+}
+
+.rule {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  height: 150px;
+  padding: 20px;
+  margin: 10px;
+  background-color: var(--cream);
+  border-radius: 40px;
+}
+
+.rule h3 {
+  color: var(--pink);
+  font-size: 3em;
+  margin-bottom: 180px;
+  margin-left: 10px;
+}
+
+.rule h4 {
+  color: var(--pink);
+  font-size: 2em;
+  margin: 10px 20px;
+  margin-right: 30px;
+}
 
 /* FOOTER STYLING */
 
@@ -141,4 +238,15 @@ footer p {
   font-size: .5em;
   text-align: right;
   margin: 20px;
+}
+
+button {
+  text-decoration: none;
+  font-weight: bold;
+  background-color: transparent;
+  color: var(--pink);
+  border: 1px solid;
+  border-color: var(--pink);
+  padding: 15px 25px;
+  margin: 30px;
 }
