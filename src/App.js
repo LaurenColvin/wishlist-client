@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Header from './Components/Header/Header';
 import ScrollTop from './Components/ScrollTop/ScrollTop';
 import Home from './Components/Home/Home';
@@ -7,7 +7,7 @@ import Category from './Components/Category/Category';
 import About from './Components/About/About';
 import User from './Components/User/User';
 import Cart from './Components/Cart/Cart';
-import Footer from './Components/Footer/Footer'
+import Footer from './Components/Footer/Footer';
 
 
 function App() {
