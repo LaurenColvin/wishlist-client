@@ -1,38 +1,124 @@
+/* COLOR SCHEME */
+
+:root {
+  --base: #FEFCF5;
+  --cream: #EFE4CD;
+  --cognac:#C87B43;
+  --green: #BFC199;
+  --pink: #FA5272;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* NAV BAR STYLING */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 3;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: var(--base);
+  border: 1px, solid;
+  border-color: var(--pink);
 }
 
-.App-link {
-  color: #61dafb;
+.nav-links {
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.icons {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+}
+
+nav h3, h4 {
+  color: var(--cognac);
+  margin: 0 30px;
+}
+
+nav h3:hover, h4:hover {
+  color: var(--pink)
+}
+
+nav h1 {
+  color: var(--cognac);
+}
+
+nav h1:hover {
+  color: var(--pink);
+}
+
+/* HOME STYLING */
+
+/* .home-page {
+  margin: 0 30%;
+} */
+
+.home-page {
+  background-image:  url('./assets/hero-image.png');
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.home-page h1 {
+  font-size: 4.5em;
+  line-height: 1.3em;
+  letter-spacing: .05em;
+  color: var(--cream);
+  margin: 0;
+  padding-top: 30vh;
+  padding-bottom: 50px;
+}
+
+.button {
+  text-decoration: none;
+  font-weight: bold;
+  background-color: transparent;
+  color: var(--cream);
+  border: 1px solid;
+  border-color: var(--cream);
+  padding: 15px 25px;
+  margin: 0;
+}
+
+.button:hover {
+  color: var(--pink);
+  border-color: var(--pink);
+}
+
+
+/* FOOTER STYLING */
+
+footer {
+  background-color: var(--green);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  font-size: .5em;
+  text-align: right;
+  margin: 30px;
 }
