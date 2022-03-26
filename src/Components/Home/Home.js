@@ -42,7 +42,7 @@ const Home = () => {
                     </div>
                     <div className='rule'>
                         <h3>5.</h3>
-                        <h4>Track your purchses in my wardrobe</h4>
+                        <h4>Track your purchases in my wardrobe</h4>
                     </div>
                 </div>
             </div>
