@@ -264,7 +264,7 @@ button {
   line-height: 1em;
   letter-spacing: .05em;
   color: var(--base);
-  margin: 0;
+  margin: 0 10%;
   padding: 8% 0;
 }
 
@@ -272,37 +272,30 @@ button {
   height: 70vh;
 }
 
-.category-page button {
-  color: var(--base);
-  background-color: var(--pink);
-  border-color: var(--pink);
-  font-size: 1.5em;
-}
-
 .new-category-form {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin: 0 10%; 
+  margin: 50px 10%; 
 }
 
 .new-category-form label{
   font-size: 2em;
 }
 
-.new-category-form input{
-  font-size: 2em;
+.new-category-form input {
+  font-size: 1.5em;
 }
 
-.submit-button{
+.submit-button {
   text-decoration: none;
   font-weight: bold;
-  background-color: transparent;
-  color: var(--pink);
+  color: var(--base);
+  background-color: var(--pink);
+  font-size: 1.5em;
   border: 1px solid;
   border-color: var(--pink);
   padding: 15px 25px;
-  margin: 30px;
 }
 
 .category-list {
@@ -316,6 +309,8 @@ button {
   border-color: var(--pink);
   margin: 40px;
   width: 40vh;
+  display: flex;
+  justify-content: space-between;
 }
 
 .category-box h2 {
@@ -325,4 +320,8 @@ button {
   text-align: left;
   margin: 10px;
   padding: 10px 20px;
+}
+
+.add-icon {
+  margin: 25px;
 }
