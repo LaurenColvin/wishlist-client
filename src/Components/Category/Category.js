@@ -1,12 +1,11 @@
 import { useState } from "react";
 
-const Category = () => {
+const Category = (props) => {
 
-    const [showForm, setShowForm] = useState(false);
     const [category, setCategory] = useState("");
     const [categoryList, setCategoryList] = useState([]);
 
-    const handleShow = () => setShowForm(true);
+
 
     const categoryHandleChange = (event) => {
         event.preventDefault();
@@ -15,7 +14,6 @@ const Category = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setShowForm(false);
         const categoriesCopy = [...categoryList];
         categoriesCopy.push(category);
         setCategoryList(categoriesCopy)
@@ -27,6 +25,7 @@ const Category = () => {
         return (
             <div className='category-box'>
                 <h2>{category}</h2>
+                {props.addIcon}
             </div>
         )
     })
@@ -38,13 +37,10 @@ const Category = () => {
                 <h1>What have you been dreaming about?</h1>
             </div>
             <div className='categories'>
-                <button onClick={handleShow}>Create New Category</button>
-                {showForm == true? (
                 <form className='new-category-form' onSubmit={handleSubmit}>
-                  <input onChange={categoryHandleChange} name="category" placeholder="Shopping for..." value={category} type="text" required/>
-                <input className="submit-button" type="submit"></input>
+                  <input onChange={categoryHandleChange} className="text-box" name="category" placeholder="Shopping for..." value={category} type="text" required/>
+                <input className="submit-button" type="submit" value="Create New Category"></input>
               </form>
-              ):(<div></div>)}
                 {categoryList != undefined ? (
                 <div className="category-list">{list}</div>
               ):(<div></div>)}
