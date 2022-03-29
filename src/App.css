@@ -276,8 +276,6 @@ nav h1:hover {
   height: 600px;
   width: 480px;
   margin: 0 33%;
-  /* border: 3px solid;
-  border-color: var(--pink); */
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
 }
 
@@ -358,7 +356,7 @@ button {
 }
 
 .categories {
-  height: 70vh;
+  height: 120%;
 }
 
 .new-category-form {
@@ -398,6 +396,8 @@ button {
   width: 40vh;
   display: flex;
   justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .category-box h2 {
@@ -411,7 +411,42 @@ button {
 
 .add-icon {
   margin: 25px;
+  margin-left: 30%;
 }
+
+/* ////////////////////////// ITEM CARD STYLING //////////////////////////////// */
+
+.item-card {
+  margin: 15px;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid;
+  border-radius: 50px;
+}
+
+.item-image {
+  height: 300px;
+}
+
+.item-image:hover {
+  transform: scale(1.05);
+}
+
+.item-card h2 {
+  font-size: 1.5em;
+  color: var(--cognac);
+  text-align: center;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.item-card h3 {
+  font-size: 2em;
+  margin: 0;
+  padding: 0;
+  color: var(--pink);
+}
+
 
 /* ////////////////////////// USER PAGE STYLING //////////////////////////////// */
 
