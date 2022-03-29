@@ -49,6 +49,7 @@ const Login = (props) => {
         fetch(props.urlBase + '/user', options)
             .then((response) => response.json())
             .then((data) => props.setCurrentUser(data.user._id))
+            .then(() => props.setUsername(newUser.firstName))
             .then(() => setNewUser({
                 firstName: "",
                 lastName: "",
@@ -72,6 +73,7 @@ const Login = (props) => {
         let loginUser = users.filter((n) => n.email === email);
         setEmail("");
         props.setCurrentUser(loginUser[0]._id);
+        props.setUsername(loginUser[0].firstName)
         props.handleClose()
     }
 
