@@ -39,6 +39,10 @@ const Category = (props) => {
     }, []);
 
   useEffect(() => {
+    fetchData()
+  }, [items]);
+
+  useEffect(() => {
       fetchData()
   }, [showModal]);
 

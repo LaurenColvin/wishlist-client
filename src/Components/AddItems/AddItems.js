@@ -8,13 +8,13 @@ const AddItems = (props) => {
 
      //////////////// FETCH ALL ITEMS ///////////////////
 
-    // const [allItems, setAllItems] = useState([]);
+    const [allItems, setAllItems] = useState([]);
 
     const fetchData = () => {
         if (props.currentUser != "") {
             fetch(props.urlBase + "/user/" + props.currentUser )
             .then((response) => response.json())
-            .then((data) => props.setItems(data.user.wishlistItems))
+            .then((data) => setAllItems(data.user.wishlistItems))
         }
     }
 
@@ -68,8 +68,9 @@ const AddItems = (props) => {
     }
 
     const putItem = (item) => {
-        const itemsCopy = [...props.items];
+        const itemsCopy = [...allItems];
         itemsCopy.push(item);
+        props.setItems(itemsCopy)
         let data = {
         wishlistItems: itemsCopy,
         };
@@ -91,11 +92,12 @@ const AddItems = (props) => {
         props.handleClose()
     };
 
-    const handleAddAnother = (event) => {
-        event.preventDefault();
-        fetchData();
-        postItem();
-    }
+    // const handleAddAnother = (event) => {
+    //     event.preventDefault();
+    //     fetchData()
+    //     postItem();
+    //     fetchData();
+    // }
 
     return (
         <div className='add-items'>
@@ -117,7 +119,7 @@ const AddItems = (props) => {
                     <input onChange={handleChange} className="text-box" name="imgUrl" placeholder="Image URL" value={newItem.imgUrl} type="text" required/>
                     <br/>
                     <input className="login-button" type="submit" value="Submit"></input>
-                    <button className="login-button" onClick={handleAddAnother}>Add Another</button>
+                    {/* <button className="login-button" onClick={handleAddAnother}>Add Another</button> */}
                 </form>
             </div>
         </div>
