@@ -260,11 +260,13 @@ nav h1:hover {
 .dark-overlay {
   position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
   background-color: black;
   height: 100vh;
   width: 200vh;
   z-index: 3;
-  opacity: 75%;
+  opacity: 65%;
 }
 
 .modal {
@@ -393,11 +395,12 @@ button {
   border: 1px solid;
   border-color: var(--pink);
   margin: 40px;
-  width: 40vh;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   justify-content: center;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .category-box h2 {
@@ -409,18 +412,35 @@ button {
   padding: 10px 20px;
 }
 
+.category-box button {
+  background-color: var(--green);
+  color: var(--base);
+  font-size: 1.5em;
+  border-color: var(--base);
+}
+
 .add-icon {
   margin: 25px;
-  margin-left: 30%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
 }
 
 /* ////////////////////////// ITEM CARD STYLING //////////////////////////////// */
+
+.category-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 
 .item-card {
   margin: 15px;
   padding: 10px;
   background-color: white;
   border: 1px solid;
+  border-color: var(--cognac);
   border-radius: 50px;
 }
 
@@ -445,6 +465,16 @@ button {
   margin: 0;
   padding: 0;
   color: var(--pink);
+}
+
+/* ////////////////////////// ADD ITEMS STYLING //////////////////////////////// */
+
+.add-items .modal {
+  margin: 0 5%;
+}
+
+.add-items h2 {
+  text-align: center;
 }
 
 
