@@ -1,4 +1,5 @@
 import './App.css';
+import { useState } from 'react';
 import { Route, Routes } from "react-router-dom";
 import Header from './Components/Header/Header';
 import ScrollTop from './Components/ScrollTop/ScrollTop';
@@ -18,17 +19,22 @@ let addIcon = <FontAwesomeIcon className="add-icon" icon={faCirclePlus} size="2x
 
 
 function App() {
+
+  //////////// Current User UseState for all Components /////////////////
+  const [currentUser, setCurrentUser] = useState("");
+
+
   return (
     <div className="App">
       <Header/>
       <main className="main">
         <ScrollTop>
           <Routes>
-            <Route path="/" element={  <Home/> }/>
-            <Route path="/category" element={  <Category addIcon={addIcon}/> }/>
+            <Route path="/" element={  <Home currentUser={currentUser} setCurrentUser={setCurrentUser}/> }/>
+            <Route path="/category" element={  <Category addIcon={addIcon} currentUser={currentUser}/> }/>
             <Route path="/about" element={  <About/> }/>
-            <Route path="/user" element={  <User/> }/>
-            <Route path="/cart" element={  <Cart/> }/>
+            <Route path="/user" element={  <User currentUser={currentUser}/> }/>
+            <Route path="/cart" element={  <Cart currentUser={currentUser} setCurrentUser={setCurrentUser}/> }/>
           </Routes>
         </ScrollTop>
       </main>
