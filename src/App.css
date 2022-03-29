@@ -72,6 +72,10 @@ nav {
   align-items: center;
 }
 
+.header-icon {
+  margin: 10px;
+}
+
 .link {
   text-decoration: none;
 }
