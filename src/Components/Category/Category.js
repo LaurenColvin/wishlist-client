@@ -6,6 +6,14 @@ import CategoryItems from "../CategoryItems/CategoryItems";
 
 const Category = (props) => {
 
+  const fetchData = () => {
+    if (props.currentUser != "") {
+      fetch(props.urlBase + "/user/" + props.currentUser )
+        .then((response) => response.json())
+        .then((data) => setUserData(data.user))
+    }
+}
+
   ////////////////// LOGIN MODAL //////////////////
 
   const [showModal, setShowModal] = useState(false);
@@ -17,6 +25,7 @@ const Category = (props) => {
 
   const handleClose = () => {
       setShowModal(false);
+      fetchData();
   };
 
   //////////////// FETCH USER DATA ///////////////////
@@ -24,16 +33,6 @@ const Category = (props) => {
   const [userData, setUserData] = useState({})
   const [categoryList, setCategoryList] = useState([]);
   const [items, setItems] = useState([]);
-
-
-
-  const fetchData = () => {
-      if (props.currentUser != "") {
-        fetch(props.urlBase + "/user/" + props.currentUser )
-          .then((response) => response.json())
-          .then((data) => setUserData(data.user))
-      }
-  }
 
   useEffect(() => {
       fetchData()
@@ -89,7 +88,7 @@ const Category = (props) => {
 
   const list = categoryList.map((category, index) => {
     return (
-        <CategoryItems items={items} category={category} key={index}/>
+        <CategoryItems urlBase={props.urlBase} currentUser={props.currentUser} setItems={setItems} items={items} category={category} key={index}/>
     )
   })
  
