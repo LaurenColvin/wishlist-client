@@ -51,7 +51,7 @@ const User = (props) => {
                 </div>
             )}
             { showModal == true ? (
-                <Login handleClose={handleClose} urlBase={props.urlBase} currentUser={props.currentUser} setCurrentUser={props.setCurrentUser}/>
+                <Login handleClose={handleClose} urlBase={props.urlBase} currentUser={props.currentUser} setCurrentUser={props.setCurrentUser} userName={props.userName} setUsername={props.setUsername}/>
             ):(
                 <div></div>
             )}
