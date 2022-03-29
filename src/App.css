@@ -433,3 +433,37 @@ button {
   font-size: 2em;
   padding: 20px 100px;
 }
+
+/* ////////////////////////// ABOUT PAGE STYLING //////////////////////////////// */
+
+.about-box {
+  height: 30vh;
+  background-color: var(--pink);
+}
+
+.about-box h1 {
+  font-size: 4em;
+  line-height: 1em;
+  letter-spacing: .05em;
+  color: var(--base);
+  margin: 0 10%;
+  padding: 5% 0;
+}
+
+.about-text {
+  height: 60vh;
+  margin: 0 20%;
+}
+
+.about-text span {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: var(--cognac);
+}
+
+.about-text p {
+  margin-top: 10%;
+  font-size: 1.5em;
+  border: 1px solid;
+  padding: 50px 80px;
+}
