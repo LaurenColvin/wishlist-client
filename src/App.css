@@ -350,7 +350,7 @@ button {
   letter-spacing: .05em;
   color: var(--base);
   margin: 0 10%;
-  padding: 8% 0;
+  padding: 5% 0;
 }
 
 .categories {
@@ -358,9 +358,6 @@ button {
 }
 
 .new-category-form {
-  /* display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap; */
   margin: 50px 10%; 
 }
 
@@ -410,4 +407,29 @@ button {
 
 .add-icon {
   margin: 25px;
+}
+
+/* ////////////////////////// USER PAGE STYLING //////////////////////////////// */
+
+.user-box {
+  height: 30vh;
+  background-color: var(--green);
+}
+
+.user-box h1 {
+  font-size: 4em;
+  line-height: 1em;
+  letter-spacing: .05em;
+  color: var(--base);
+  margin: 0 10%;
+  padding: 5% 0;
+}
+
+.login-container {
+  height: 80vh;
+}
+
+.login-container button {
+  font-size: 2em;
+  padding: 20px 100px;
 }
