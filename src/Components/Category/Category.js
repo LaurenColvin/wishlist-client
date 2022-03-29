@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 
 import Login from "../Login/Login";
-
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faCirclePlus} from '@fortawesome/free-solid-svg-icons'
+import CategoryItems from "../CategoryItems/CategoryItems";
 
 
 const Category = (props) => {
@@ -25,29 +23,34 @@ const Category = (props) => {
 
   const [userData, setUserData] = useState({})
   const [categoryList, setCategoryList] = useState([]);
+  const [items, setItems] = useState([]);
 
 
 
   const fetchData = () => {
-      fetch(props.urlBase + "/user/" + props.currentUser )
-        .then((response) => response.json())
-        .then((data) => setUserData(data.user))
-      if (userData.categories != undefined) {
-        setCategoryList(userData.categories)
-      } else {
-        setCategoryList([])
+      if (props.currentUser != "") {
+        fetch(props.urlBase + "/user/" + props.currentUser )
+          .then((response) => response.json())
+          .then((data) => setUserData(data.user))
       }
-      console.log(categoryList)
   }
 
   useEffect(() => {
       fetchData()
     }, []);
 
-  // useEffect(() => {
-  //     fetchData()
-  // }, [showModal]);
+  useEffect(() => {
+      fetchData()
+  }, [showModal]);
 
+  useEffect(() => {
+    if (userData.categories != undefined) {
+      setCategoryList(userData.categories)
+    }
+    if (userData.wishlistItems != undefined) {
+      setItems(userData.wishlistItems)
+    }
+  }, [userData])
 
   //////////////// SET CATEGORIES //////////////////
 
@@ -62,22 +65,31 @@ const Category = (props) => {
 
   const handleSubmit = (event) => {
       event.preventDefault();
-
       const categoriesCopy = [...categoryList];
       categoriesCopy.push(category);
-      setCategoryList(categoriesCopy)
+      setCategoryList(categoriesCopy);
+      let data = {
+        categories: categoriesCopy,
+      };
+      let options = {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      };
+      fetch(props.urlBase + "/user/" + props.currentUser, options)
+        .then((response) => response.json())
+        .then((data) => console.log(data));
       setCategory("");
       console.log(category)
   };
 
 
 
-  const list = categoryList.map((category) => {
+  const list = categoryList.map((category, index) => {
     return (
-        <div className='category-box'>
-            <h2>{category}</h2>
-            <FontAwesomeIcon className="add-icon" icon={faCirclePlus} size="2x" style={{color:"#FA5272"}}/>
-        </div>
+        <CategoryItems items={items} category={category} key={index}/>
     )
   })
  
