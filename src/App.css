@@ -121,11 +121,12 @@ nav h1:hover {
   text-decoration: none;
   font-weight: bold;
   background-color: transparent;
-  color: var(--cream);
+  color: var(--pink);
   border: 1px solid;
-  border-color: var(--cream);
+  border-color: var(--pink);
   padding: 15px 25px;
   margin: 0;
+  font-size: 1.5em;
 }
 
 .button:hover {
@@ -225,25 +226,69 @@ nav h1:hover {
   margin-right: 30px;
 }
 
+/* USER LOGIN */
+
+.user-login {
+  background-color: var(--pink);
+  height: 40vh;
+}
+
+.user-login h2 {
+  margin: 0;
+  padding: 65px;
+  font-size: 3em;
+  color: var(--base);
+}
+
+.user-login button {
+  color: var(--base);
+  border-color: var(--base);
+  font-size: 2em;
+}
+
+.user-login button:hover {
+  background-color: var(--green)
+}
+
 
 /* MODAL STYLING */
 
 .modal {
   background-color: var(--base);
   z-index: 3;
-  position: absolute;
+  position: fixed;
   top: 80px;
-  height: 600px;
-  width: 450px;
+  height: 650px;
+  width: 480px;
   margin: 0 33%;
   border: 3px solid;
   border-color: var(--pink);
 }
 
+.new-user-form label{
+  font-size: 1.5em;
+}
+
+.new-user-form input {
+  font-size: 1.5em;
+  margin: 10px;
+}
+
+.login-button {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--base);
+  background-color: var(--pink);
+  font-size: .8em;
+  border: 1px solid;
+  border-color: var(--pink);
+  padding: 5px 25px;
+}
+
 /* FOOTER STYLING */
 
 footer {
-  background-color: var(--green);
+  background-color: var(--cream);
   width: 100%;
   margin: 0;
   padding: 5px;
