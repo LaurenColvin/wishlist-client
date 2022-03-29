@@ -1,10 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faXmark} from '@fortawesome/free-solid-svg-icons'
 
 
 const Login = (props) => {
+
+    //////////// FETCH ALL USERS //////////////
+
+    const [users, setUsers] = useState([])
+
+    useEffect(() => {
+        fetch(props.urlBase + "/user")
+          .then((response) => response.json())
+          .then((data) => setUsers(data.user));
+      }, []);
+
+    const getUsers = () => {
+        fetch(props.urlBase + '/user')
+            .then((response) => response.json())
+            .then((data) => setUsers(data.user))
+    }
 
     /* FORM USESTATES AND HANDLE CHANGES */
 
@@ -34,26 +50,49 @@ const Login = (props) => {
         setBudget(event.target.value);
     };
 
+    ////////////////// POST NEW USER //////////////////////////
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        setFirstName("");
-        setLastName("");
-        setEmail("");
-        setBudget("");
-        console.log(firstName);
-        props.handleClose()
+        let data = {
+            "firstName": firstName,
+            "lastName": lastName,
+            "email": email,
+            "budget": budget
+        }
+        let options = {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          };
+        fetch(props.urlBase + '/user', options)
+            .then((response) => response.json())
+            .then((data) => props.setCurrentUser(data.user._id))
+            .then(() => setFirstName(""))
+            .then(() => setLastName(""))
+            .then(() => setEmail(""))
+            .then(() => setBudget(""))
+            .then(() => props.handleClose())
+            .then(() => getUsers())
     };
+
+
+    ////////////////// FETCH USER DATA ////////////////////
 
     const userHandleChange = (event) => {
         event.preventDefault();
         setBlank(event.target.value);
-        props.setCurrentUser(event.target.value);
     }
+
+
 
     const handleLogin = (event) => {
         event.preventDefault();
+        let loginUser = users.filter((n) => n.email === blank);
         setBlank("");
-        console.log(props.currentUser);
+        props.setCurrentUser(loginUser[0]._id);
         props.handleClose()
     }
 
