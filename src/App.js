@@ -11,8 +11,9 @@ import Cart from './Components/Cart/Cart';
 import Footer from './Components/Footer/Footer';
 
 
-
 function App() {
+
+  const urlBase = 'http://localhost:3000'
 
   //////////// Current User UseState for all Components /////////////////
   const [currentUser, setCurrentUser] = useState("");
@@ -24,11 +25,11 @@ function App() {
       <main className="main">
         <ScrollTop>
           <Routes>
-            <Route path="/" element={  <Home currentUser={currentUser} setCurrentUser={setCurrentUser}/> }/>
-            <Route path="/category" element={  <Category currentUser={currentUser}/> }/>
+            <Route path="/" element={  <Home urlBase={urlBase} currentUser={currentUser} setCurrentUser={setCurrentUser}/> }/>
+            <Route path="/category" element={  <Category urlBase={urlBase} currentUser={currentUser}/> }/>
             <Route path="/about" element={  <About/> }/>
-            <Route path="/user" element={  <User currentUser={currentUser}/> }/>
-            <Route path="/cart" element={  <Cart currentUser={currentUser} setCurrentUser={setCurrentUser}/> }/>
+            <Route path="/user" element={  <User urlBase={urlBase} currentUser={currentUser}/> }/>
+            <Route path="/cart" element={  <Cart urlBase={urlBase} currentUser={currentUser} setCurrentUser={setCurrentUser}/> }/>
           </Routes>
         </ScrollTop>
       </main>
