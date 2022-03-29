@@ -14,8 +14,7 @@ const Home = (props) => {
         setShowModal(true);
     };
 
-    const handleClose = (event) => {
-        event.preventDefault();
+    const handleClose = () => {
         setShowModal(false);
     };
 
@@ -70,7 +69,7 @@ const Home = (props) => {
                 <button className='button' onClick={handleShow}>User Login</button>
             </div>
             { showModal == true ? (
-                <Login handleClose={handleClose} currentUser={props.currentUser} setCurrentUser={props.setCurrentUser}/>
+                <Login handleClose={handleClose} urlBase={props.urlBase} currentUser={props.currentUser} setCurrentUser={props.setCurrentUser}/>
             ):(
                 <div></div>
             )}
