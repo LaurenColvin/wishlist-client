@@ -5,7 +5,7 @@ import Login from '../Login/Login';
 
 const Home = (props) => {
 
-    /* MODAL SHOW */
+    ////////////////// LOGIN MODAL //////////////////
 
     const [showModal, setShowModal] = useState(false);
 
@@ -69,7 +69,7 @@ const Home = (props) => {
                 <button className='button' onClick={handleShow}>User Login</button>
             </div>
             { showModal == true ? (
-                <Login handleClose={handleClose} urlBase={props.urlBase} currentUser={props.currentUser} setCurrentUser={props.setCurrentUser}/>
+                <Login handleClose={handleClose} urlBase={props.urlBase} currentUser={props.currentUser} setCurrentUser={props.setCurrentUser} userName={props.userName} setUsername={props.setUsername}/>
             ):(
                 <div></div>
             )}
