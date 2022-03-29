@@ -17,18 +17,19 @@ function App() {
 
   //////////// Current User UseState for all Components /////////////////
   const [currentUser, setCurrentUser] = useState("");
+  const [userName, setUsername] = useState("");
 
 
   return (
     <div className="App">
-      <Header/>
+      <Header userName={userName}/>
       <main className="main">
         <ScrollTop>
           <Routes>
-            <Route path="/" element={  <Home urlBase={urlBase} currentUser={currentUser} setCurrentUser={setCurrentUser}/> }/>
-            <Route path="/category" element={  <Category urlBase={urlBase} currentUser={currentUser} setCurrentUser={setCurrentUser}/> }/>
+            <Route path="/" element={  <Home urlBase={urlBase} currentUser={currentUser} setCurrentUser={setCurrentUser} userName={userName} setUsername={setUsername}/> }/>
+            <Route path="/category" element={  <Category urlBase={urlBase} currentUser={currentUser} setCurrentUser={setCurrentUser} userName={userName} setUsername={setUsername}/> }/>
             <Route path="/about" element={  <About/> }/>
-            <Route path="/user" element={  <User urlBase={urlBase} currentUser={currentUser} setCurrentUser={setCurrentUser}/> }/>
+            <Route path="/user" element={  <User urlBase={urlBase} currentUser={currentUser} setCurrentUser={setCurrentUser} userName={userName} setUsername={setUsername}/> }/>
             <Route path="/cart" element={  <Cart urlBase={urlBase} currentUser={currentUser} setCurrentUser={setCurrentUser}/> }/>
           </Routes>
         </ScrollTop>
