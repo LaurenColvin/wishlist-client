@@ -27,16 +27,21 @@ const Category = (props) => {
   const [categoryList, setCategoryList] = useState([]);
 
 
+
   const fetchData = () => {
       fetch(props.urlBase + "/user/" + props.currentUser )
         .then((response) => response.json())
         .then((data) => setUserData(data.user))
-        // .then(() => setCategoryList(userData.categories))
+      if (userData.categories != undefined) {
+        setCategoryList(userData.categories)
+      } else {
+        setCategoryList([])
+      }
+      console.log(categoryList)
   }
 
   useEffect(() => {
       fetchData()
-      console.log(props.currentUser)
     }, []);
 
   // useEffect(() => {
@@ -57,6 +62,7 @@ const Category = (props) => {
 
   const handleSubmit = (event) => {
       event.preventDefault();
+
       const categoriesCopy = [...categoryList];
       categoriesCopy.push(category);
       setCategoryList(categoriesCopy)
@@ -64,14 +70,17 @@ const Category = (props) => {
       console.log(category)
   };
 
+
+
   const list = categoryList.map((category) => {
-      return (
-          <div className='category-box'>
-              <h2>{category}</h2>
-              <FontAwesomeIcon className="add-icon" icon={faCirclePlus} size="2x" style={{color:"#FA5272"}}/>
-          </div>
-      )
+    return (
+        <div className='category-box'>
+            <h2>{category}</h2>
+            <FontAwesomeIcon className="add-icon" icon={faCirclePlus} size="2x" style={{color:"#FA5272"}}/>
+        </div>
+    )
   })
+ 
 
 
   return (
@@ -89,13 +98,13 @@ const Category = (props) => {
                 <input onChange={categoryHandleChange} className="text-box" name="category" placeholder="Shopping for..." value={category} type="text" required/>
               <input className="submit-button" type="submit" value="Create New Category"></input>
             </form>
-              {categoryList != undefined ? (
-              <div className="category-list">{list}</div>
-            ):(<div></div>)}
+            {categoryList.length == 0 ? (
+              <div></div>
+            ):(<div className="category-list">{list}</div>)}
           </div>
           )}
           { showModal == true ? (
-              <Login handleClose={handleClose} urlBase={props.urlBase} currentUser={props.currentUser} setCurrentUser={props.setCurrentUser}/>
+              <Login handleClose={handleClose} urlBase={props.urlBase} currentUser={props.currentUser} setCurrentUser={props.setCurrentUser} userName={props.userName} setUsername={props.setUsername}/>
           ):(
               <div></div>
           )}
