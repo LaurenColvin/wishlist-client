@@ -1,4 +1,7 @@
 import { useState } from "react";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faCirclePlus} from '@fortawesome/free-solid-svg-icons'
+
 
 const Category = (props) => {
 
@@ -25,7 +28,7 @@ const Category = (props) => {
         return (
             <div className='category-box'>
                 <h2>{category}</h2>
-                {props.addIcon}
+                <FontAwesomeIcon className="add-icon" icon={faCirclePlus} size="2x" style={{color:"#FA5272"}}/>
             </div>
         )
     })
