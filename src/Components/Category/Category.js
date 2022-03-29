@@ -3,7 +3,7 @@ import { useState } from "react";
 const Category = (props) => {
 
     const [category, setCategory] = useState("");
-    const [categoryList, setCategoryList] = useState([]);
+    const [categoryList, setCategoryList] = useState(["Wedding", "Vacation"]);
 
 
 
