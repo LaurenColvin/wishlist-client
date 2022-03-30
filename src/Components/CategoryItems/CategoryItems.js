@@ -5,6 +5,7 @@ import AddItems from '../AddItems/AddItems'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCirclePlus} from '@fortawesome/free-solid-svg-icons'
 
+
 const CategoryItems = (props) => {
 
     ////////////////// ADD ITEMS MODAL //////////////////
@@ -29,10 +30,26 @@ const CategoryItems = (props) => {
     setCategoryItems(itemsList)  
       }, []);
 
+    useEffect(() => {
+    let itemsList = props.items.filter((n) => n.category === props.category);
+    setCategoryItems(itemsList)  
+        }, [props.items.length]);
+
+    const handleDelete = (event) => {
+        event.preventDefault()
+        fetch(props.urlBase + '/item/' + event.target.id, {
+            method: "DELETE",
+          }).then((response) => response.json());
+        props.handleClose()
+    }
+
     const list = categoryItems.map((item) => {
         return (
             <div className='item-card' key={item._id}>
-                <h2>{item.title}</h2>
+                <div className='card-header'>
+                    <h2>{item.title}</h2>
+                    <h2 onClick={handleDelete} className='delete-icon' id={item._id}>x</h2>
+                </div>
                 <a href={item.link} target='_blank'><img className='item-image' src={item.imgUrl} alt={item.title}/></a>
                 <h2>{item.brand}</h2>
                 <h3>${item.price}</h3>
