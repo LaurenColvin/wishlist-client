@@ -32,7 +32,8 @@ const Category = (props) => {
   const [userData, setUserData] = useState({})
   const [categoryList, setCategoryList] = useState([]);
   const [items, setItems] = useState([]);
-  const [deleteItem, setDeleteItem] = useState(false)
+  const [cartItems, setCartItems] = useState([]);
+  const [editItem, setEditItem] = useState(false)
 
   useEffect(() => {
       fetchData()
@@ -44,7 +45,7 @@ const Category = (props) => {
 
   useEffect(() => {
       fetchData()
-    }, [deleteItem]);
+    }, [editItem]);
 
   useEffect(() => {
     if (userData.categories != undefined) {
@@ -52,6 +53,9 @@ const Category = (props) => {
     }
     if (userData.wishlistItems != undefined) {
       setItems(userData.wishlistItems)
+    }
+    if (userData.cartItems != undefined) {
+      setCartItems(userData.cartItems)
     }
   }, [userData])
 
@@ -106,14 +110,14 @@ const Category = (props) => {
     fetch(props.urlBase + "/user/" + props.currentUser, options)
       .then((response) => response.json())
       .then((data) => console.log(data));
-    setDeleteItem(!deleteItem)
+    setEditItem(!editItem)
 }
 
 
 
   const list = categoryList.map((category, index) => {
     return (
-        <CategoryItems urlBase={props.urlBase} currentUser={props.currentUser} setItems={setItems} items={items} category={category} key={index} deleteItem={deleteItem} setDeleteItem={setDeleteItem} handleDeleteCategory={handleDeleteCategory}/>
+        <CategoryItems urlBase={props.urlBase} currentUser={props.currentUser} setItems={setItems} items={items} category={category} key={index} editItem={editItem} setEditItem={setEditItem} handleDeleteCategory={handleDeleteCategory} cartItems={cartItems} setCartItems={setCartItems}/>
     )
   })
  
