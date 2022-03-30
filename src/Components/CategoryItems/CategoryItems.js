@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 
+import ItemCard from '../ItemCard/ItemCard'
 import AddItems from '../AddItems/AddItems'
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
@@ -11,15 +12,6 @@ import {faBars} from '@fortawesome/free-solid-svg-icons'
 
 
 const CategoryItems = (props) => {
-
-    ////////////////// COLOR CHANGE FOR ICONS //////////////////
-
-    const [checkMark, setCheckMark] = useState(false);
-
-    const handleAddCart = (event) => {
-        event.preventDefault();
-        setCheckMark(!checkMark);
-    };
 
     ////////////////// CATEGORY MENU //////////////////
 
@@ -55,7 +47,7 @@ const CategoryItems = (props) => {
         setShowModal(false);
     };
 
-    ////////////////// SET ITEMS LIST ////////////////////
+    ////////////////// SET ITEMS WISHLIST ////////////////////
 
     const [categoryItems, setCategoryItems] = useState([])
 
@@ -74,7 +66,7 @@ const CategoryItems = (props) => {
         fetch(props.urlBase + '/item/' + event.target.id, {
             method: "DELETE",
           }).then((response) => response.json());
-        props.setDeleteItem(!props.deleteItem)
+        props.setEditItem(!props.editItem)
         setShowMenu(false);
         setDeleteX(false);
     }
@@ -82,16 +74,7 @@ const CategoryItems = (props) => {
 
     const list = categoryItems.map((item) => {
         return (
-            <div className='item-card' key={item._id}>
-                <a href={item.link} target='_blank'><img className='item-image' src={item.imgUrl} alt={item.title}/></a>
-                {deleteX === false ? (<div></div>):(<h4 onClick={handleDeleteItem} className='delete-icon' id={item._id}>x</h4>)}
-                <FontAwesomeIcon onClick={handleAddCart} icon={faCircleCheck} className='add-to-cart' size="3x" style={checkMark == false ? ({color:"#FA5272"}):({color:"#BFC199"})} />
-                <div className='card-header'>
-                    <h2>{item.title}</h2>
-                    <h2>{item.brand} |    <span>${item.price}</span></h2>
-                    {/* <h3>${item.price}</h3> */}
-                </div>
-            </div>
+            <ItemCard item={item} key={item._id} handleDeleteItem={handleDeleteItem} deleteX={deleteX} currentUser={props.currentUser} editItem={props.editItem} setEditItem={props.setEditItem} cartItems={props.cartItems} setCartItems={props.setCartItems} urlBase={props.urlBase}/>
         )
     })
 
