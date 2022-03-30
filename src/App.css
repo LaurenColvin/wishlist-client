@@ -468,10 +468,29 @@ button {
   color: var(--pink);
 }
 
+.card-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-icon {
+  margin: 20px;
+  z-index: 2;
+  margin-left: 0;
+  color: var(--pink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.delete-icon:hover {
+  color: ver(--pink);
+}
+
 /* ////////////////////////// ADD ITEMS STYLING //////////////////////////////// */
 
 .add-items .modal {
-  margin: 0 33%;
+  position: absolute;
+  top: -30px;
+  /* margin: 0 33%; */
 }
 
 .add-items h2 {
