@@ -32,6 +32,7 @@ const Category = (props) => {
   const [userData, setUserData] = useState({})
   const [categoryList, setCategoryList] = useState([]);
   const [items, setItems] = useState([]);
+  const [deleteItem, setDeleteItem] = useState(false)
 
   useEffect(() => {
       fetchData()
@@ -40,6 +41,11 @@ const Category = (props) => {
   useEffect(() => {
       fetchData()
     }, [showModal]);
+
+  useEffect(() => {
+      console.log('fetching data after delete')
+      fetchData()
+    }, [deleteItem]);
 
   useEffect(() => {
     if (userData.categories != undefined) {
@@ -87,7 +93,7 @@ const Category = (props) => {
 
   const list = categoryList.map((category, index) => {
     return (
-        <CategoryItems urlBase={props.urlBase} currentUser={props.currentUser} setItems={setItems} items={items} category={category} key={index} handleClose={handleClose}/>
+        <CategoryItems urlBase={props.urlBase} currentUser={props.currentUser} setItems={setItems} items={items} category={category} key={index} deleteItem={deleteItem} setDeleteItem={setDeleteItem}/>
     )
   })
  
