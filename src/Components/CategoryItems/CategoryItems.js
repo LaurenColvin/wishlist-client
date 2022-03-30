@@ -40,7 +40,7 @@ const CategoryItems = (props) => {
         fetch(props.urlBase + '/item/' + event.target.id, {
             method: "DELETE",
           }).then((response) => response.json());
-        props.handleClose()
+        props.setDeleteItem(!props.deleteItem)
     }
 
     const list = categoryItems.map((item) => {
