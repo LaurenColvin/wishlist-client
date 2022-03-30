@@ -104,7 +104,7 @@ const AddItems = (props) => {
             <div className='dark-overlay' onClick={props.handleClose}></div>
             <div className='modal'>
                 <FontAwesomeIcon onClick={props.handleClose} className="close-icon" icon={faXmark} size="2x" style={{color:"#FA5272"}}/>
-                <h2>ADD ITEMS</h2>
+                <h2>ADD ITEM</h2>
                 <form className='new-user-form' onSubmit={handleSubmit}>
                     <input onChange={handleChange} className="text-box" name="title" placeholder="Title" value={newItem.title} type="text" required/>
                     <br/>
