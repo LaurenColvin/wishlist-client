@@ -25,7 +25,6 @@ const Category = (props) => {
 
   const handleClose = () => {
       setShowModal(false);
-      fetchData();
   };
 
   //////////////// FETCH USER DATA ///////////////////
@@ -39,12 +38,8 @@ const Category = (props) => {
     }, []);
 
   useEffect(() => {
-    fetchData()
-  }, [items]);
-
-  useEffect(() => {
       fetchData()
-  }, [showModal]);
+    }, [showModal]);
 
   useEffect(() => {
     if (userData.categories != undefined) {
@@ -92,7 +87,7 @@ const Category = (props) => {
 
   const list = categoryList.map((category, index) => {
     return (
-        <CategoryItems urlBase={props.urlBase} currentUser={props.currentUser} setItems={setItems} items={items} category={category} key={index}/>
+        <CategoryItems urlBase={props.urlBase} currentUser={props.currentUser} setItems={setItems} items={items} category={category} key={index} handleClose={handleClose}/>
     )
   })
  
