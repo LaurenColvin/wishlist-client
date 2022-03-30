@@ -262,7 +262,7 @@ nav h1:hover {
   top: 0;
   right: 0;
   left: 0;
-  background-color: black;
+  background-color: white;
   height: 100vh;
   width: 200vh;
   z-index: 3;
@@ -553,11 +553,14 @@ button {
 .add-items .modal {
   position: absolute;
   top: -30px;
-  /* margin: 0 33%; */
+  margin: 0 28%;
+  height: 500px;
 }
 
 .add-items h2 {
   text-align: center;
+  font-size: 3em;
+  color: var(--pink)
 }
 
 
