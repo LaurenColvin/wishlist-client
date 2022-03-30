@@ -362,7 +362,7 @@ button {
 }
 
 .new-category-form {
-  margin: 50px 10%; 
+  margin: 10px 10%; 
 }
 
 .new-category-form label{
@@ -371,7 +371,7 @@ button {
 
 .new-category-form input {
   font-size: 2em;
-  margin: 30px;
+  margin: 10px 30px;
 }
 
 .submit-button {
@@ -386,9 +386,11 @@ button {
 }
 
 .category-list {
-  display: flex;
+  /* display: flex;
   justify-content: space-evenly;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
+  margin: 0 5%;
+  margin-bottom: 200px;
 }
 
 .category-box {
@@ -401,10 +403,18 @@ button {
   justify-content: center;
   flex-wrap: wrap;
   position: relative;
+  min-height: 250px;
+}
+
+.category-header {
+  background-color: var(--pink);
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .category-box h2 {
-  color: var(--pink);
+  color: var(--base);
   font-weight: bold;
   font-size: 2em;
   text-align: left;
@@ -412,11 +422,12 @@ button {
   padding: 10px 20px;
 }
 
-.category-box button {
+.compare-items {
   background-color: var(--green);
   color: var(--base);
   font-size: 1.5em;
   border-color: var(--base);
+  margin-top: 100px;
 }
 
 .add-icon {
@@ -427,26 +438,59 @@ button {
   z-index: 2;
 }
 
+.category-delete-icon {
+  font-size: 1.2em;
+  margin: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.category-menu {
+  /* background-color: #BFC199; */
+  margin-top: 70px;
+  margin-bottom: -100px;
+  z-index: 2;
+  /* position: absolute;
+  top: 0;
+  right: 0; */
+}
+
+.category-button {
+  font-size: 1em;
+  background-color: var(--green);
+  color: var(--base);
+  border: none;
+}
+
+.category-button:hover {
+  background-color: var(--pink);
+}
+
 /* ////////////////////////// ITEM CARD STYLING //////////////////////////////// */
 
 .category-items {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  margin-top: 80px;
 }
 
 .item-card {
-  margin: 15px;
+  margin: 10px;
   padding: 10px;
   background-color: white;
   border: 1px solid;
   border-color: var(--cognac);
-  border-radius: 50px;
+  position: relative;
 }
 
 .item-image {
-  height: 300px;
+  width: 250px;
+  margin: 0;
+  padding: 0;
 }
 
 .item-image:hover {
@@ -454,15 +498,16 @@ button {
 }
 
 .item-card h2 {
-  font-size: 1.5em;
+  font-size: 1em;
   color: var(--cognac);
   text-align: center;
   text-transform: capitalize;
   margin: 0;
+  padding: 0;
 }
 
-.item-card h3 {
-  font-size: 2em;
+.item-card span {
+  font-size: 1.5em;
   margin: 0;
   padding: 0;
   color: var(--pink);
@@ -470,19 +515,37 @@ button {
 
 .card-header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  background-color: white;
 }
 
 .delete-icon {
-  margin: 20px;
+  font-size: 1.5em;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  margin: 10px;
   z-index: 2;
-  margin-left: 0;
-  color: var(--pink);
+  color: var(--cognac);
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .delete-icon:hover {
-  color: ver(--pink);
+  color: var(--pink);
+  transform: scale(1.05);
+}
+
+.add-to-cart {
+  font-size: 1.8em;
+  z-index: 2;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  margin: 10px;
+}
+
+.add-to-cart:hover {
+  color: var(--base);
 }
 
 /* ////////////////////////// ADD ITEMS STYLING //////////////////////////////// */
