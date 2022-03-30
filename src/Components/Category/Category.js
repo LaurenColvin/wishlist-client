@@ -43,7 +43,6 @@ const Category = (props) => {
     }, [showModal]);
 
   useEffect(() => {
-      console.log('fetching data after delete')
       fetchData()
     }, [deleteItem]);
 
@@ -89,11 +88,32 @@ const Category = (props) => {
       console.log(category)
   };
 
+  ////////////// EDIT CATGORY LIST /////////////////////
+
+  const handleDeleteCategory = (event) => {
+    event.preventDefault()
+    const categoriesFilter = categoryList.filter((n) => n != event.target.id)
+    let data = {
+      categories: categoriesFilter,
+    };
+    let options = {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    };
+    fetch(props.urlBase + "/user/" + props.currentUser, options)
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+    setDeleteItem(!deleteItem)
+}
+
 
 
   const list = categoryList.map((category, index) => {
     return (
-        <CategoryItems urlBase={props.urlBase} currentUser={props.currentUser} setItems={setItems} items={items} category={category} key={index} deleteItem={deleteItem} setDeleteItem={setDeleteItem}/>
+        <CategoryItems urlBase={props.urlBase} currentUser={props.currentUser} setItems={setItems} items={items} category={category} key={index} deleteItem={deleteItem} setDeleteItem={setDeleteItem} handleDeleteCategory={handleDeleteCategory}/>
     )
   })
  
