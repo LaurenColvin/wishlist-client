@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 
+import './../Category/Category.css'
+
 import ItemCard from '../ItemCard/ItemCard'
 import AddItems from '../AddItems/AddItems'
 
