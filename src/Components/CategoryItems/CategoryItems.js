@@ -125,7 +125,7 @@ const CategoryItems = (props) => {
             </div>
             { showMenu == true ? (
                 <div className='category-menu'>
-                    {/* <button className='category-button' onClick={handleShow}>Add New Item</button> */}
+                    <button className='mobile-button' onClick={handleShow}>Add New Item</button>
                     <button className='category-button' onClick={handleDeleteItems}>Delete Item</button>
                     <button className='category-button' id={props.category} onClick={handleDeleteCategory}>Delete Category</button>
                 </div>
