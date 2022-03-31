@@ -1,7 +1,7 @@
-import {Link} from 'react-router-dom'
 import { useState } from "react";
 import Login from '../Login/Login';
 
+import './Home.css'
 
 const Home = (props) => {
 
@@ -38,7 +38,7 @@ const Home = (props) => {
                 <div className='instructions-container'>
                     <div className='rule'>
                         <h3>1.</h3>
-                        <h4>Create a category</h4>
+                        <h4>Create a category for your items</h4>
                     </div>
                     <div className='rule'>
                         <h3>2.</h3>
@@ -50,10 +50,14 @@ const Home = (props) => {
                     </div>
                     <div className='rule'>
                         <h3>4.</h3>
-                        <h4>Add to cart and check your budget for the month</h4>
+                        <h4>Add to cart what you want to buy</h4>
                     </div>
                     <div className='rule'>
                         <h3>5.</h3>
+                        <h4>Check your budget for the month</h4>
+                    </div>
+                    <div className='rule'>
+                        <h3>6.</h3>
                         <h4>Track your purchases in my wardrobe</h4>
                     </div>
                 </div>
