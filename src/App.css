@@ -38,7 +38,7 @@ body {
   background-color: var(--base);
 }
 
-/* USER LOGIN */
+/*//////////////////// USER LOGIN ////////////////////*/
 
 .user-login {
   background-color: var(--pink);
@@ -63,7 +63,7 @@ body {
 }
 
 
-/* MODAL STYLING */
+/*////////////////////// MODAL STYLING ///////////////////////*/
 
 .dark-overlay {
   position: fixed;
@@ -125,33 +125,6 @@ body {
   padding: 5px 25px;
 }
 
-/* FOOTER STYLING */
-
-footer {
-  background-color: var(--cream);
-  width: 100%;
-  margin: 0;
-  margin-top: 80px;
-  padding: 5px;
-}
-
-footer p {
-  font-size: .5em;
-  text-align: right;
-  margin: 20px;
-}
-
-button {
-  text-decoration: none;
-  font-weight: bold;
-  background-color: transparent;
-  color: var(--pink);
-  border: 1px solid;
-  border-color: var(--pink);
-  padding: 15px 25px;
-  margin: 30px;
-}
-
 /* ////////////////////////// ADD ITEMS STYLING //////////////////////////////// */
 
 .add-items .modal {
@@ -160,13 +133,15 @@ button {
   left: 0;
   right: 0;
   margin: 0 auto;
-  height: 630px;
+  width: 80vw;
+  height: 530px;
 }
 
-.add-items h2 {
+.modal h3 {
+  margin: 10px;
   text-align: center;
   font-size: 3em;
-  color: var(--pink)
+  color: var(--pink);
 }
 
 
@@ -250,6 +225,12 @@ button {
   .new-user-form input {
     font-size: 1.5em;
     margin: 10px;
+  }
+
+  .add-items .modal {
+    margin: 0 auto;
+    height: 630px;
+    width: 480px;
   }
 
 }
