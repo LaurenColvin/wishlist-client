@@ -6,6 +6,8 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import {faUserCircle} from '@fortawesome/free-solid-svg-icons'
 import {faCartShopping} from '@fortawesome/free-solid-svg-icons'
 
+import './Header.css'
+
 const Header = (props) => {
 
   const [menuOpen, setMenuOpen] = useState(true);
