@@ -109,20 +109,32 @@ const CategoryItems = (props) => {
 
     return (
         <div className='category-box'>
-            <div className ='category-header'>
-                <h2>{props.category}</h2>
-                {categoryItems.length == 0 ? (<div></div>):(
-                    <div>
+            { props.currentUser != undefined ? (
+                <div className ='category-header'>
+                        <h2>{props.category}</h2>
                         {showMore == false ? (
-                            <FontAwesomeIcon onClick={handleShowMore} className="view-more-icon" icon={faAngleUp} size="2x" style={{color:"#FEFCF5"}}/>
-                        ):(
-                            <FontAwesomeIcon onClick={handleShowMore} className="view-more-icon" icon={faAngleDown} size="2x" style={{color:"#FEFCF5"}}/>
-                        )}
-                        <FontAwesomeIcon onClick={handleShow} className="add-icon" icon={faCirclePlus} size="2x" style={{color:"#FEFCF5"}}/> 
-                    </div>
-                )}
-                <FontAwesomeIcon onClick={handleMenu} className="more-icon" icon={faEllipsis} size="2x" style={{color:"#FEFCF5"}}/>
-            </div>
+                                <FontAwesomeIcon onClick={handleShowMore} className="view-more-icon" icon={faAngleUp} size="2x" style={{color:"#FEFCF5"}}/>
+                            ):(
+                                <FontAwesomeIcon onClick={handleShowMore} className="view-more-icon" icon={faAngleDown} size="2x" style={{color:"#FEFCF5"}}/>
+                            )}
+                        <FontAwesomeIcon onClick={props.handleShow} className="more-icon" icon={faEllipsis} size="2x" style={{color:"#FEFCF5"}}/>
+                </div>
+                ):(
+                <div className ='category-header'>
+                    <h2>{props.category}</h2>
+                    {categoryItems.length == 0 ? (<div></div>):(
+                        <div>
+                            {showMore == false ? (
+                                <FontAwesomeIcon onClick={handleShowMore} className="view-more-icon" icon={faAngleUp} size="2x" style={{color:"#FEFCF5"}}/>
+                            ):(
+                                <FontAwesomeIcon onClick={handleShowMore} className="view-more-icon" icon={faAngleDown} size="2x" style={{color:"#FEFCF5"}}/>
+                            )}
+                            <FontAwesomeIcon onClick={handleShow} className="add-icon" icon={faCirclePlus} size="2x" style={{color:"#FEFCF5"}}/> 
+                        </div>
+                    )}
+                    <FontAwesomeIcon onClick={handleMenu} className="more-icon" icon={faEllipsis} size="2x" style={{color:"#FEFCF5"}}/>
+                </div>
+            )}
             { showMenu == true ? (
                 <div className='category-menu'>
                     <button className='mobile-button' onClick={handleShow}>Add New Item</button>
