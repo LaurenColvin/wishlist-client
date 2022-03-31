@@ -89,7 +89,7 @@ const User = (props) => {
             </div>
             { props.currentUser == "" ? (
                 <div className='login-container'>
-                    <button onClick={handleShow}>Login</button>
+                    <button onClick={handleShow} className='login-container-button'>Login</button>
                 </div>
             ):(
                 <div>
