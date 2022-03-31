@@ -213,7 +213,7 @@ const Category = (props) => {
 
   const list = categoryList.map((category, index) => {
     return (
-        <CategoryItems urlBase={props.urlBase} currentUser={props.currentUser} setItems={setItems} items={items} category={category} key={index} editItem={editItem} setEditItem={setEditItem} handleDeleteCategory={handleDeleteCategory} cartItems={cartItems} setCartItems={setCartItems} wardrobeItems={wardrobeItems}/>
+        <CategoryItems urlBase={props.urlBase} currentUser={props.currentUser} setItems={setItems} items={items} category={category} key={index} editItem={editItem} setEditItem={setEditItem} handleDeleteCategory={handleDeleteCategory} cartItems={cartItems} setCartItems={setCartItems} wardrobeItems={wardrobeItems} handleShow={handleShow}/>
     )
   })
  
@@ -227,7 +227,7 @@ const Category = (props) => {
           { props.currentUser == "" ? (
               <div className='no-user' >
                   <button onClick={handleShow} className='login-category'>Login to add categories of your own!</button>
-                  <h2>Trending Categories:</h2>
+                  <h3>Trending Categories:</h3>
                   <div className="category-list">{list}</div>
               </div>
           ):(
