@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 import Login from '../Login/Login';
 
 import './Home.css'
@@ -68,17 +69,17 @@ const Home = (props) => {
             </div>
             <div className='trending'>
                 <h2>Popular Categories</h2>
-                <div className='category-container'>
-                    <div className='trending-category'>
+                <Link className='category-link' to='/my-wishlist'>
+                    <div className='trending-category' id='wedding'>
                         <h3>Wedding Guest Dress</h3>
                     </div>
-                    <div className='trending-category'>
+                    <div className='trending-category' id='vacation'>
                         <h3>Vacation Swim Suit</h3>
                     </div>
-                    <div className='trending-category'>
-                        <h3>Classic Work Blazer</h3>
+                    <div className='trending-category' id='workout'>
+                        <h3>Workout Sets</h3>
                     </div>
-                </div>
+                </Link>
             </div>
             { showModal == true ? (
                 <Login handleClose={handleClose} urlBase={props.urlBase} currentUser={props.currentUser} setCurrentUser={props.setCurrentUser} userName={props.userName} setUsername={props.setUsername}/>
