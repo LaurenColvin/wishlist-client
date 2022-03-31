@@ -413,8 +413,9 @@ button {
 }
 
 .category-box {
-  border: 1px solid;
-  border-color: var(--pink);
+  /* border: 1px solid;
+  border-color: var(--pink); */
+  background-color: white;
   margin: 40px;
   display: flex;
   flex-direction: column;
@@ -441,12 +442,14 @@ button {
   padding: 10px 20px;
 }
 
-.compare-items {
-  background-color: var(--green);
-  color: var(--base);
-  font-size: 1.5em;
-  border-color: var(--base);
-  margin-top: 100px;
+.view-more-icon {
+  position: absolute;
+  top: 40px;
+}
+
+.item-count {
+  font-size: 2em;
+  color: var(--cognac);
 }
 
 .add-icon {
@@ -466,8 +469,20 @@ button {
   z-index: 2;
 }
 
+.add-item-button {
+  margin: 0 30%;
+  font-size: 1.2em;
+  background-color: var(--green);
+  color: var(--base);
+  border: none;
+}
+
+.add-item-button:hover {
+  background-color: var(--pink);
+}
+
 .category-menu {
-  /* background-color: #BFC199; */
+  background-color: var(--base);
   margin-top: 70px;
   margin-bottom: -100px;
   z-index: 2;
