@@ -25,18 +25,12 @@ const Home = (props) => {
                 <h1>Shop Smarter,<br/> Not Harder.</h1>
                 <button className='button' onClick={handleShow}>Start Dreaming</button>
             </div>
-            <div className='trending'>
-                <h2>Popular Categories</h2>
-                <div className='category-container'>
-                    <div className='trending-category'>
-                        <h3>Wedding Guest Dress</h3>
-                    </div>
-                    <div className='trending-category'>
-                        <h3>Vacation Swim Suit</h3>
-                    </div>
-                    <div className='trending-category'>
-                        <h3>Classic Work Blazer</h3>
-                    </div>
+            <div className='about-page'>
+                <div className='about-box'>
+                    <h1>About Wishlist</h1>
+                </div>
+                <div className='about-text'>
+                    <p><span>Wishlist is an online shopping app to help you plan your purchases.</span> <br/> <br/>So much better than having a million tabs open and carts filled with items you can’t remember at 20 different stores. Put all of your ideal items in one place to better plan and save up for your dream wardrobe! This app will also help with budgeting and making sure you are making the best purchase at the best price.</p>
                 </div>
             </div>
             <div className='instructions'>
@@ -67,6 +61,20 @@ const Home = (props) => {
             <div className='user-login'>
                 <h2>Ready to get started?</h2>
                 <button className='button' onClick={handleShow}>User Login</button>
+            </div>
+            <div className='trending'>
+                <h2>Popular Categories</h2>
+                <div className='category-container'>
+                    <div className='trending-category'>
+                        <h3>Wedding Guest Dress</h3>
+                    </div>
+                    <div className='trending-category'>
+                        <h3>Vacation Swim Suit</h3>
+                    </div>
+                    <div className='trending-category'>
+                        <h3>Classic Work Blazer</h3>
+                    </div>
+                </div>
             </div>
             { showModal == true ? (
                 <Login handleClose={handleClose} urlBase={props.urlBase} currentUser={props.currentUser} setCurrentUser={props.setCurrentUser} userName={props.userName} setUsername={props.setUsername}/>
