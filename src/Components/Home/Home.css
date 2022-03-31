@@ -1,0 +1,202 @@
+/* HOME STYLING */
+
+.hero-image {
+  background-image: url("./../../assets/hero-image.png");
+  height: 50vh;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-image h1 {
+  font-size: 3em;
+  line-height: 1em;
+  letter-spacing: 0.05em;
+  color: var(--cream);
+  margin: 0;
+  padding-top: 20vh;
+  padding-bottom: 50px;
+}
+
+.button {
+  text-decoration: none;
+  font-weight: bold;
+  background-color: transparent;
+  color: var(--pink);
+  border: 1px solid;
+  border-color: var(--pink);
+  padding: 15px 25px;
+  margin: 0;
+  font-size: 1em;
+}
+
+.button:hover {
+  color: var(--pink);
+  border-color: var(--pink);
+}
+
+/* TRENDING STYLING */
+
+.trending {
+  background-color: var(--base);
+  margin: 0;
+}
+
+.trending h2 {
+  margin: 0;
+  padding: 25px;
+  font-size: 2.5em;
+  color: var(--cognac);
+}
+
+.trending h3 {
+  font-size: 2em;
+  margin: 10px;
+  padding: 0px 10px;
+  color: var(--base);
+}
+
+.trending h3:hover {
+  color: var(--pink);
+}
+
+.category-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0 10%;
+}
+
+.trending-category {
+  background-color: var(--green);
+  width: 70%;
+  height: 100px;
+  margin-bottom: 20px;
+  border: 2px solid;
+  border-color: var(--pink);
+}
+
+/* INSTRUCTIONS STYLING */
+
+.instructions {
+  background-color: var(--green);
+}
+
+.instructions h2 {
+  color: var(--cream);
+  font-size: 3.5em;
+  padding: 50px 0 0 0;
+  margin-bottom: 40px;
+}
+
+.instructions span {
+  font-family: Nesans;
+}
+
+.instructions-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 5%;
+  padding-bottom: 55px;
+}
+
+.rule {
+  position: relative;
+  width: 30%;
+  height: 150px;
+  padding: 20px;
+  margin: 10px;
+  background-color: var(--cream);
+  border-radius: 40px;
+}
+
+.rule h3 {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  color: var(--pink);
+  font-size: 2em;
+  margin-bottom: 180px;
+  margin-left: 10px;
+}
+
+.rule h4 {
+  color: var(--pink);
+  font-size: 1.6em;
+  margin: auto;
+  padding: 0 5px;
+}
+
+
+
+
+
+
+
+/* ///////////////////RESPONSIVE DESIGN //////////////////////*/
+
+@media only screen and (min-width: 768px) {
+  .hero-image {
+    height: 100vh;
+  }
+
+  .home-page h1 {
+    font-size: 5.5em;
+    padding-top: 40vh;
+  }
+
+  .button {
+    font-size: 1.5em;
+  }
+
+  .trending {
+    height: 60vh;
+  }
+
+  .trending h2 {
+    padding: 65px;
+    font-size: 3em;
+  }
+
+  .trending h3 {
+    margin: 10%;
+    font-size: 2.5em;
+    padding: 0px 40px;
+  }
+
+  .category-container {
+    margin: 0 20%;
+  }
+
+  .trending-category {
+    width: 30%;
+    height: 200px;
+    margin-bottom: 50px;
+  }
+
+  .rule {
+    width: 300px;
+    height: 150px;
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .rule h3 {
+    font-size: 3em;
+  }
+
+  .rule h4 {
+    font-size: 2em;
+    margin: 10px 20px;
+    margin-right: 30px;
+  }
+
+}
+
+@media only screen and (min-width: 1024px) {
+}
