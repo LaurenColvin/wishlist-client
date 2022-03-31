@@ -1,0 +1,101 @@
+/* ////////////////////////// ITEM CARD STYLING //////////////////////////////// */
+
+.category-items {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 80px;
+  }
+  
+  .item-card {
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    /* border: 1px solid;
+    border-color: var(--cognac); */
+    position: relative;
+  }
+  
+  .item-image {
+    width: 250px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .item-image:hover {
+    transform: scale(1.05);
+  }
+  
+  .item-card h2 {
+    font-size: 1em;
+    color: var(--cognac);
+    text-align: center;
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .item-card span {
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+    color: var(--pink);
+  }
+  
+  .card-header {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+  }
+  
+  .item-card h3 {
+    font-size: 1em;
+    color: var(--pink);
+    text-align: center;
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .delete-icon {
+    font-size: 1.5em;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    margin: 10px;
+    z-index: 2;
+    color: var(--cognac);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .delete-icon:hover {
+    color: var(--pink);
+    transform: scale(1.05);
+  }
+  
+  .add-to-cart {
+    font-size: 1.5em;
+    z-index: 2;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin: 10px;
+    border-radius: 100px;
+    /* background-color: var(--pink);
+    padding: 5px; */
+  }
+  
+  .add-to-cart:hover {
+    border: 1px solid;
+    border-color: #FA5272;
+  }
+
+
+  /* ///////////////////RESPONSIVE DESIGN //////////////////////*/
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 1024px) {
+}
