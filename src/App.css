@@ -564,6 +564,15 @@ button {
   background-color: white;
 }
 
+.item-card h3 {
+  font-size: 1em;
+  color: var(--pink);
+  text-align: center;
+  text-transform: capitalize;
+  margin: 0;
+  padding: 0;
+}
+
 .delete-icon {
   font-size: 1.5em;
   position: absolute;
@@ -605,7 +614,7 @@ button {
   left: 0;
   right: 0;
   margin: 0 auto;
-  height: 500px;
+  height: 630px;
 }
 
 .add-items h2 {
@@ -772,4 +781,18 @@ button {
 }
 
 @media only screen and (min-width: 1024px) {
+
+.nav-links {
+  margin-left: 8%;
+}
+
+.icons {
+  margin-right: 8%;
+}
+
+.category-box {
+  margin: 0 5%;
+}
+
+
 }
