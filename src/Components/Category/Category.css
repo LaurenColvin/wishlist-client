@@ -13,6 +13,12 @@
   padding: 5% 0;
 }
 
+.login-category {
+  font-size: 1em;
+  padding: 20px 50px;
+  margin-bottom: 0;
+}
+
 .categories {
   height: 120%;
 }
@@ -39,6 +45,11 @@
   border: 1px solid;
   border-color: var(--pink);
   padding: 15px 25px;
+}
+
+.no-user h2 {
+  font-size: 2.2em;
+  color: var(--cognac);
 }
 
 .category-list {
@@ -107,9 +118,28 @@
   z-index: 2;
 }
 
+.category-button {
+  font-size: 1em;
+  background-color: var(--green);
+  color: var(--base);
+  border: none;
+  margin: 10px;
+}
+
+.mobile-button {
+  font-size: 1em;
+  background-color: var(--green);
+  color: var(--base);
+  border: none;
+}
+
+.category-button:hover {
+  background-color: var(--pink);
+}
+
 .add-item-button {
-  margin: 0 30%;
-  font-size: 1.2em;
+  font-size: 1.5em;
+  margin: 0 70px;
   background-color: var(--green);
   color: var(--base);
   border: none;
@@ -129,61 +159,54 @@
     right: 0; */
 }
 
-.category-button {
-  font-size: 1em;
-  background-color: var(--green);
-  color: var(--base);
-  border: none;
-  margin: 10px;
-}
+/* ///////////////////RESPONSIVE DESIGN //////////////////////*/
 
-.mobile-button {
-    font-size: 1em;
+@media only screen and (min-width: 768px) {
+  .welcome-box {
+    height: 30vh;
+  }
+
+  .welcome-box h1 {
+    font-size: 4em;
+  }
+
+  .no-user h2 {
+    font-size: 3em;
+    color: var(--cognac);
+  }
+
+  .new-category-form label {
+    font-size: 2em;
+  }
+
+  .new-category-form input {
+    font-size: 2em;
+  }
+
+  .mobile-button {
+    display: none;
+  }
+
+  .add-item-button {
+    margin: 0 30%;
+    font-size: 1.2em;
     background-color: var(--green);
     color: var(--base);
     border: none;
   }
 
-.category-button:hover {
-  background-color: var(--pink);
-}
+  .add-icon {
+    display: block;
+    margin: 25px;
+    position: absolute;
+    top: 0;
+    right: 50px;
+    z-index: 2;
+  }
 
-/* ///////////////////RESPONSIVE DESIGN //////////////////////*/
-
-@media only screen and (min-width: 768px) {
-    .welcome-box {
-        height: 30vh;
-
-      }
-      
-      .welcome-box h1 {
-        font-size: 4em;
-      }
-
-      .new-category-form label {
-        font-size: 2em;
-      }
-      
-      .new-category-form input {
-        font-size: 2em;
-      }
-
-    .mobile-button {
-        display: none;
-    }
-
-    .add-icon {
-        display: block;
-        margin: 25px;
-        position: absolute;
-        top: 0;
-        right: 50px;
-        z-index: 2;
-      }
-
-      .category-box {
-        margin: 40px;
-      }
+  .category-box {
+    margin: 40px;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
