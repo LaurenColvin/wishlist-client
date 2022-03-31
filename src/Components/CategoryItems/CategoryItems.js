@@ -52,6 +52,14 @@ const CategoryItems = (props) => {
         setShowMenu(false);
     }
 
+    //////////////// FILTER WARDROBE CATEGORY //////////////
+
+    // useEffect(() => {
+    //     let wardrobeCategory = props.items.filter((n) => n.category === props.category);
+    //     setCategoryItems(itemsList)  
+    // }, []);
+    
+
     ////////////////// ADD ITEMS MODAL //////////////////
 
     const [showModal, setShowModal] = useState(false);
