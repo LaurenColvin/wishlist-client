@@ -177,6 +177,75 @@ body {
   padding: 10px 20px;
 }
 
+.intro {
+  display: flex;
+  flex-direction: column;
+  margin: 0 5%;
+  margin-top: 80px;
+  padding: 10px;
+  background-color: var(--green);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+.headshot {
+  width: 80%;
+  height: 500px;
+  object-fit: cover;
+  object-position: bottom;
+  margin: 20px auto;
+}
+
+.intro-text p {
+  font-size: 1em;
+  padding: 0;
+  margin: 30px;
+  margin-bottom: 50px;
+}
+
+.intro-text span {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: var(--base);
+  margin: 0 30px;
+  margin-bottom: 0;
+}
+
+.intro-text h5 {
+  color: var(--base);
+  font-family: Nesans;
+  font-size: 1.8em;
+  margin: 30px;
+  margin-bottom: -20px;
+  text-transform: capitalize;
+}
+
+.intro-text a {
+  font-size: 2em;
+  margin: 20px;
+  color: var(--base);
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid;
+  border-color: var(--base);
+}
+
+.intro-text a:hover {
+  background-color: var(--pink);
+}
+
+.intro-text {
+  margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.link-buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
 
 /* ///////////////////RESPONSIVE DESIGN //////////////////////*/
 
@@ -199,6 +268,31 @@ body {
     margin-top: 10%;
     font-size: 1.5em;
     padding: 50px 80px;
+  }
+
+  .intro {
+    flex-direction: row;
+    margin: 0 10%;
+    margin-top: 100px;
+    padding: 10px 10px;
+  }
+
+  .intro-text p {
+    font-size: 1em;
+    padding: 50px;
+  }
+  
+  .intro-text span {
+    font-size: 1.8em;
+  }
+
+  .intro-text p {
+    margin: 0;
+  }
+
+  .headshot {
+    width: 30vw;
+    margin: 30px;
   }
 
   /*//////////// MODAL STYLING //////////////*/
@@ -237,6 +331,18 @@ body {
 
 @media only screen and (min-width: 1024px) {
 
+  .headshot {
+    width: 90%;
+  }
+
+  .intro-text p {
+    font-size: 1.2em;
+    padding: 50px 80px;
+  }
+  
+  .intro-text span {
+    font-size: 2em;
+  }
 
 .category-box {
   margin: 0 5%;
