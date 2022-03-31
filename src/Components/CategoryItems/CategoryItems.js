@@ -9,7 +9,8 @@ import {faEllipsis} from '@fortawesome/free-solid-svg-icons'
 import {faEllipsisVertical} from '@fortawesome/free-solid-svg-icons'
 import {faCircleCheck} from '@fortawesome/free-solid-svg-icons'
 import {faBars} from '@fortawesome/free-solid-svg-icons'
-
+import { faAngleUp } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 
 const CategoryItems = (props) => {
 
@@ -21,6 +22,15 @@ const CategoryItems = (props) => {
         event.preventDefault();
         setShowMenu(!showMenu);
         setDeleteX(false);
+    };
+
+    ////////////////// DISPLAY ITEMS //////////////////
+
+    const [showMore, setShowMore] = useState(false);
+
+    const handleShowMore = (event) => {
+        event.preventDefault();
+        setShowMore(!showMore);
     };
 
     //////////////// DELETE ITEM BUTTON //////////////
@@ -82,6 +92,15 @@ const CategoryItems = (props) => {
         <div className='category-box'>
             <div className ='category-header'>
                 <h2>{props.category}</h2>
+                {categoryItems.length == 0 ? (<div></div>):(
+                    <div>
+                        {showMore == false ? (
+                            <FontAwesomeIcon onClick={handleShowMore} className="view-more-icon" icon={faAngleUp} size="2x" style={{color:"#FEFCF5"}}/>
+                        ):(
+                            <FontAwesomeIcon onClick={handleShowMore} className="view-more-icon" icon={faAngleDown} size="2x" style={{color:"#FEFCF5"}}/>
+                        )}
+                    </div>
+                )}
                 <FontAwesomeIcon onClick={handleMenu} className="add-icon" icon={faEllipsis} size="2x" style={{color:"#FEFCF5"}}/>
             </div>
             { showMenu == true ? (
@@ -94,8 +113,12 @@ const CategoryItems = (props) => {
                 <div></div>
             )}
             {categoryItems.length == 0 ? (
-              <div></div>
-            ):(<div className='category-items'>{list}</div>)}
+              <button className='add-item-button' onClick={handleShow}>Add Item</button>
+            ):(
+                <div>
+                    {showMore == false ? (<div className='category-items'>{list}</div>):(<h3 className='item-count'>{categoryItems.length} items saved.</h3>)}
+                </div>
+            )}
             { showModal == true ? (
                 <AddItems handleClose={handleClose} urlBase={props.urlBase} currentUser={props.currentUser} category={props.category} setItems={props.setItems} items={props.items} />
             ):(
