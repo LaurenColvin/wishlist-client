@@ -39,7 +39,16 @@ const CategoryItems = (props) => {
 
     const handleDeleteItems = (event) => {
         event.preventDefault();
+        setShowMore(false)
         setDeleteX(true);
+        setShowMenu(false);
+    }
+
+    //////////////// DELETE CATEGORY BUTTON //////////////
+
+    const handleDeleteCategory = (event) => {
+        event.preventDefault();
+        props.handleDeleteCategory(event);
         setShowMenu(false);
     }
 
@@ -99,15 +108,16 @@ const CategoryItems = (props) => {
                         ):(
                             <FontAwesomeIcon onClick={handleShowMore} className="view-more-icon" icon={faAngleDown} size="2x" style={{color:"#FEFCF5"}}/>
                         )}
+                        <FontAwesomeIcon onClick={handleShow} className="add-icon" icon={faCirclePlus} size="2x" style={{color:"#FEFCF5"}}/> 
                     </div>
                 )}
-                <FontAwesomeIcon onClick={handleMenu} className="add-icon" icon={faEllipsis} size="2x" style={{color:"#FEFCF5"}}/>
+                <FontAwesomeIcon onClick={handleMenu} className="more-icon" icon={faEllipsis} size="2x" style={{color:"#FEFCF5"}}/>
             </div>
             { showMenu == true ? (
                 <div className='category-menu'>
-                    <button className='category-button' onClick={handleShow}>Add New Item</button>
+                    {/* <button className='category-button' onClick={handleShow}>Add New Item</button> */}
                     <button className='category-button' onClick={handleDeleteItems}>Delete Item</button>
-                    <button className='category-button' id={props.category} onClick={props.handleDeleteCategory}>Delete Category</button>
+                    <button className='category-button' id={props.category} onClick={handleDeleteCategory}>Delete Category</button>
                 </div>
             ):(
                 <div></div>
@@ -116,7 +126,7 @@ const CategoryItems = (props) => {
               <button className='add-item-button' onClick={handleShow}>Add Item</button>
             ):(
                 <div>
-                    {showMore == false ? (<div className='category-items'>{list}</div>):(<h3 className='item-count'>{categoryItems.length} items saved.</h3>)}
+                    {showMore == false ? (<div className='category-items'>{list}</div>):(<h3 className='item-count'><span>{categoryItems.length}</span> items saved . . .</h3>)}
                 </div>
             )}
             { showModal == true ? (
