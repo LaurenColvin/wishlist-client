@@ -100,15 +100,17 @@ nav h5 {
 
   nav h5 {
     display: block;
+    font-size: 1em;
+    font-family: Nesans;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  .nav-links {
-    margin-left: 8%;
+  /* .nav-links {
+    margin-left: 5%;
   }
 
   .icons {
-    margin-right: 8%;
-  }
+    margin-right: 5%;
+  } */
 }
