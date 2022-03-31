@@ -1,0 +1,169 @@
+/* ////////////////////////// CATEGORY PAGE STYLING //////////////////////////////// */
+
+.welcome-box {
+  background-color: var(--cognac);
+}
+
+.welcome-box h1 {
+  font-size: 3em;
+  line-height: 1em;
+  letter-spacing: 0.05em;
+  color: var(--base);
+  margin: 0 10%;
+  padding: 5% 0;
+}
+
+.categories {
+  height: 120%;
+}
+
+.new-category-form {
+  margin: 10px 10%;
+}
+
+.new-category-form label {
+  font-size: 1.5em;
+}
+
+.new-category-form input {
+  font-size: 1.5em;
+  margin: 10px 30px;
+}
+
+.submit-button {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--base);
+  background-color: var(--pink);
+  font-size: 1.5em;
+  border: 1px solid;
+  border-color: var(--pink);
+  padding: 15px 25px;
+}
+
+.category-list {
+  margin: 0 5%;
+  margin-bottom: 200px;
+}
+
+.category-box {
+  background-color: white;
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  min-height: 250px;
+}
+
+.category-header {
+  background-color: var(--pink);
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.category-box h2 {
+  color: var(--base);
+  font-weight: bold;
+  font-size: 2em;
+  text-align: left;
+  margin: 10px;
+  padding: 10px 50px;
+  text-transform: capitalize;
+}
+
+.view-more-icon {
+  position: absolute;
+  top: 28px;
+  left: 20px;
+}
+
+.item-count {
+  font-size: 2em;
+  color: var(--cognac);
+}
+
+.more-icon {
+  margin: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.add-icon {
+  margin: 25px;
+  position: absolute;
+  top: 0;
+  right: 50px;
+  z-index: 2;
+}
+
+.category-delete-icon {
+  font-size: 1.2em;
+  margin: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.add-item-button {
+  margin: 0 30%;
+  font-size: 1.2em;
+  background-color: var(--green);
+  color: var(--base);
+  border: none;
+}
+
+.add-item-button:hover {
+  background-color: var(--pink);
+}
+
+.category-menu {
+  background-color: var(--base);
+  margin-top: 70px;
+  margin-bottom: -100px;
+  z-index: 2;
+  /* position: absolute;
+    top: 0;
+    right: 0; */
+}
+
+.category-button {
+  font-size: 1em;
+  background-color: var(--green);
+  color: var(--base);
+  border: none;
+}
+
+.category-button:hover {
+  background-color: var(--pink);
+}
+
+/* ///////////////////RESPONSIVE DESIGN //////////////////////*/
+
+@media only screen and (min-width: 768px) {
+    .welcome-box {
+        height: 30vh;
+
+      }
+      
+      .welcome-box h1 {
+        font-size: 4em;
+      }
+
+      .new-category-form label {
+        font-size: 2em;
+      }
+      
+      .new-category-form input {
+        font-size: 2em;
+      }
+}
+
+@media only screen and (min-width: 1024px) {
+}
