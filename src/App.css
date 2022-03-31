@@ -31,7 +31,7 @@
 }
 
 .main {
-  margin-top: 80px;
+  margin-top: 60px;
 }
 
 body {
@@ -43,6 +43,7 @@ body {
 nav {
   position: fixed;
   width: 100%;
+  height: 60px;
   top: 0;
   z-index: 3;
   display: flex;
@@ -79,6 +80,7 @@ nav {
 }
 
 .icons {
+  font-size: .8em;
   position: absolute;
   right: 10px;
   display: flex;
@@ -611,6 +613,14 @@ button {
   background-color: var(--green);
 }
 
+.user-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 30%;
+}
+
 .user-box h1 {
   font-size: 4em;
   line-height: 1em;
@@ -620,6 +630,10 @@ button {
   padding: 5% 0;
 }
 
+.user-header h1 {
+  color: var(--pink)
+}
+
 .login-container {
   height: 80vh;
 }
@@ -627,6 +641,25 @@ button {
 .login-container button {
   font-size: 2em;
   padding: 20px 100px;
+}
+
+.wardrobe-container {
+  background-color: white;
+}
+
+.wardrobe-container h1 {
+  background-color: var(--cognac);
+  color: var(--base);
+  padding: 20px;
+  margin: 0 10%;
+}
+
+.wardrobe {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 0 10%;
+  padding: 30px;
 }
 
 /* ////////////////////////// ABOUT PAGE STYLING //////////////////////////////// */
@@ -646,7 +679,6 @@ button {
 }
 
 .about-text {
-  height: 50vh;
   margin: 0 20%;
 }
 
@@ -667,7 +699,7 @@ button {
 
 .cart-box {
   height: 30vh;
-  background-color: var(--cream);
+  background-color: var(--cognac);
 }
 
 .cart-box h1 {
@@ -682,14 +714,33 @@ button {
 .cart-items {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  border: 3px solid;
-  border-color: var(--cognac);
+  justify-content: space-evenly;
+  /* border: 3px solid;
+  border-color: var(--cognac); */
   margin: 0 10%;
   padding: 30px;
 }
 
+.progress-bar {
+  background-color: var(--pink);
+  height: 30px;
+  margin: 20px 20%;
+  border-radius: 30px;
+}
 
+.inner-progress-bar {
+  margin: 20px 20%;
+  background-color: var(--green);
+  height: 30px;
+  border-radius: 30px;
+}
+
+.price {
+  text-align: right;
+  margin: 0;
+  padding: 2px 10px;
+  font-size: 1.3em;
+}
 
 
 /* ///////////////////RESPONSIVE DESIGN //////////////////////*/
