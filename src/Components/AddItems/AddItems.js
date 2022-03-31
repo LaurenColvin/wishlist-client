@@ -29,6 +29,8 @@ const AddItems = (props) => {
             title: "",
             brand: "",
             price: Number,
+            size: "",
+            color: "",
             link: "",
             imgUrl: ""
         });
@@ -62,6 +64,8 @@ const AddItems = (props) => {
                 title: "",
                 brand: "",
                 price: Number,
+                size: "",
+                color: "",
                 link: "",
                 imgUrl: ""
             }))
@@ -117,6 +121,12 @@ const AddItems = (props) => {
                     <label>Right click on image and copy image address:</label>
                     <br/>
                     <input onChange={handleChange} className="text-box" name="imgUrl" placeholder="Image URL" value={newItem.imgUrl} type="text" required/>
+                    <br/>
+                    <label>Optional:</label>
+                    <br/>
+                    <input onChange={handleChange} className="text-box" name="size" placeholder="Size" value={newItem.size} type="text"/>
+                    <br/>
+                    <input onChange={handleChange} className="text-box" name="color" placeholder="Color" value={newItem.color} type="text"/>
                     <br/>
                     <input className="login-button" type="submit" value="Submit"></input>
                     {/* <button className="login-button" onClick={handleAddAnother}>Add Another</button> */}
