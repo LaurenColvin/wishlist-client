@@ -33,6 +33,7 @@ const Category = (props) => {
   const [categoryList, setCategoryList] = useState([]);
   const [items, setItems] = useState([]);
   const [cartItems, setCartItems] = useState([]);
+  const [wardrobeItems, setWardrobeItems] = useState([]);
   const [editItem, setEditItem] = useState(false)
 
   useEffect(() => {
@@ -56,6 +57,9 @@ const Category = (props) => {
     }
     if (userData.cartItems != undefined) {
       setCartItems(userData.cartItems)
+    }
+    if (userData.wardrobeItems != undefined) {
+      setWardrobeItems(userData.wardrobeItems)
     }
   }, [userData])
 
@@ -117,7 +121,7 @@ const Category = (props) => {
 
   const list = categoryList.map((category, index) => {
     return (
-        <CategoryItems urlBase={props.urlBase} currentUser={props.currentUser} setItems={setItems} items={items} category={category} key={index} editItem={editItem} setEditItem={setEditItem} handleDeleteCategory={handleDeleteCategory} cartItems={cartItems} setCartItems={setCartItems}/>
+        <CategoryItems urlBase={props.urlBase} currentUser={props.currentUser} setItems={setItems} items={items} category={category} key={index} editItem={editItem} setEditItem={setEditItem} handleDeleteCategory={handleDeleteCategory} cartItems={cartItems} setCartItems={setCartItems} wardrobeItems={wardrobeItems}/>
     )
   })
  
