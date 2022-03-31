@@ -17,10 +17,10 @@ This app includes a backend database using MongoDB and Express.js and a frontend
 
 | Day   | Deliverable                          | Status     |
 | ----- | ------------------------------------ | ---------- |
-| Day 1 | Planning and Approval                | Incomplete   |
-| Day 1 | Set up backend files and structure   | Incomplete   |
+| Day 1 | Planning and Approval                | Complete   |
+| Day 1 | Set up backend files and structure   | Complete   |
 | Day 2 | Test and deploy backend              | Incomplete   |
-| Day 2 | Set up frontend files and structure  | Incomplete   |
+| Day 2 | Set up frontend files and structure  | Complete   |
 | Day 3 | Add algorithm sorting method         | Incomplete   |
 | Day 4 | CSS Styling and Responsive Design    | Incomplete   |
 | Day 5 | MVP & Bug Fixes & Adding Seed Data   | Incomplete  |
