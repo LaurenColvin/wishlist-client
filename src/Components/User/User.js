@@ -63,19 +63,19 @@ const User = (props) => {
         )
     })
 
-    const archiveList = archiveItems.map((item) => {
+    // const archiveList = archiveItems.map((item) => {
 
-        return (
-                <div className='item-card'>
-                    <a href={item.link} target='_blank'><img className='item-image' src={item.imgUrl} alt={item.title}/></a>
-                    <h4 className='delete-icon' id={item._id}>x</h4>
-                    <div className='card-header'>
-                        <h2>{item.title}</h2>
-                        <h2>{item.brand} |    <span>${item.price}</span></h2>
-                    </div>
-                </div>
-        )
-    })
+    //     return (
+    //             <div className='item-card'>
+    //                 <a href={item.link} target='_blank'><img className='item-image' src={item.imgUrl} alt={item.title}/></a>
+    //                 <h4 className='delete-icon' id={item._id}>x</h4>
+    //                 <div className='card-header'>
+    //                     <h2>{item.title}</h2>
+    //                     <h2>{item.brand} |    <span>${item.price}</span></h2>
+    //                 </div>
+    //             </div>
+    //     )
+    // })
 
 
 
@@ -101,12 +101,12 @@ const User = (props) => {
                             {wardrobeList}
                         </div>
                     </div>
-                    <div>
+                    {/* <div>
                         <h1>Archived Items</h1>
                         <div>
                             {archiveList}
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             )}
             { showModal == true ? (
