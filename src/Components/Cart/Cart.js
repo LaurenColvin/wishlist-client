@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import './Cart.css'
+
 import Login from "../Login/Login";
 
 const Cart = (props) => {
