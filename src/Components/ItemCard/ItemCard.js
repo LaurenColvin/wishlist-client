@@ -67,15 +67,29 @@ const ItemCard = (props) => {
     };
 
   return (
-    <div className='item-card'>
-        <a href={props.item.link} target='_blank'><img className='item-image' src={props.item.imgUrl} alt={props.item.title}/></a>
-        {props.deleteX === false ? (<div></div>):(<h4 onClick={props.handleDeleteItem} className='delete-icon' id={props.item._id}>x</h4>)}
-        <FontAwesomeIcon onClick={handleAddCart} icon={faCircleCheck} className='add-to-cart' size="1x" style={checkMark == false ? ({color:"#FA5272"}):({color:"#BFC199"})} />
-        <div className='card-header'>
-            <h2>{props.item.title}</h2>
-            <h2>{props.item.brand} |    <span>${props.item.price}</span></h2>
-            {props.item.size != undefined ? (<h3>{props.item.size} - {props.item.color}</h3>):(<div></div>)}
-        </div>
+      <div>
+        { props.currentUser != undefined ? (
+            <div className='item-card'>
+                <a href={props.item.link} target='_blank'><img className='item-image' src={props.item.imgUrl} alt={props.item.title}/></a>
+                {props.deleteX === false ? (<div></div>):(<h4 onClick={props.handleDeleteItem} className='delete-icon' id={props.item._id}>x</h4>)}
+                <div className='card-header'>
+                    <h2>{props.item.title}</h2>
+                    <h2>{props.item.brand} |    <span>${props.item.price}</span></h2>
+                    {props.item.size != undefined ? (<h3>{props.item.size} - {props.item.color}</h3>):(<div></div>)}
+                </div>
+            </div>
+        ):(  
+            <div className='item-card'>
+                <a href={props.item.link} target='_blank'><img className='item-image' src={props.item.imgUrl} alt={props.item.title}/></a>
+                {props.deleteX === false ? (<div></div>):(<h4 onClick={props.handleDeleteItem} className='delete-icon' id={props.item._id}>x</h4>)}
+                <FontAwesomeIcon onClick={handleAddCart} icon={faCircleCheck} className='add-to-cart' size="1x" style={checkMark == false ? ({color:"#FA5272"}):({color:"#BFC199"})} />
+                <div className='card-header'>
+                    <h2>{props.item.title}</h2>
+                    <h2>{props.item.brand} |    <span>${props.item.price}</span></h2>
+                    {props.item.size != undefined ? (<h3>{props.item.size} - {props.item.color}</h3>):(<div></div>)}
+                </div>
+            </div>
+        )}
     </div>
   );
 };
