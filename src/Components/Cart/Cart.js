@@ -171,10 +171,10 @@ const Cart = (props) => {
             ):(
                 <div>
                     <div className='progress-bar' style={ budget > sum ? ({width:((sum/userData.budget)*60) +'vw'}):({width:'60vw'})}>
-                        <h5 className='price'>Total Cost: {sum}</h5>
+                        <h5 className='price'>Total Cost: ${sum}</h5>
                     </div>
                     <div className='inner-progress-bar' style={ budget < sum ? ({width:((userData.budget/sum)*60) +'vw'}):({width:'60vw'})}>
-                        <h5 className='price'>Budget: {userData.budget}</h5>
+                        <h5 className='price'>Budget: ${userData.budget}</h5>
                     </div>
                     <div className='cart-items'>
                         {list}
