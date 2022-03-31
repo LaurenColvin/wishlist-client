@@ -243,6 +243,8 @@ body {
 .link-buttons {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -293,6 +295,12 @@ body {
   .headshot {
     width: 30vw;
     margin: 30px;
+  }
+
+  .link-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
   }
 
   /*//////////// MODAL STYLING //////////////*/
