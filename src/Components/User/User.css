@@ -1,75 +1,73 @@
 /* ////////////////////////// USER PAGE STYLING //////////////////////////////// */
 
 .user-box {
-    background-color: var(--green);
-  }
-  
-  .user-header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-    margin: 0 auto;
-  }
-  
-  .user-box h1 {
-    font-size: 3em;
-    line-height: 1em;
-    letter-spacing: .05em;
-    color: var(--base);
-    margin: 0 10%;
-    padding: 5% 0;
-  }
-  
-  .user-header h1 {
-    color: var(--pink);
-    margin-left: 20px;
-  }
-  
-  .login-container {
-    height: 80vh;
-  }
-  
-  .login-container button {
-    font-size: 2em;
-    padding: 20px 100px;
-  }
-  
-  .wardrobe-container {
-    background-color: white;
-  }
-  
-  .wardrobe-container h1 {
-    background-color: var(--cognac);
-    color: var(--base);
-    padding: 20px;
-    margin: 0 10%;
-  }
-  
-  .wardrobe {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin: 0 10%;
-    padding: 30px;
-  }
+  background-color: var(--green);
+}
 
+.user-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 auto;
+}
 
-    /* ///////////////////RESPONSIVE DESIGN //////////////////////*/
+.user-box h1 {
+  font-size: 3em;
+  line-height: 1em;
+  letter-spacing: 0.05em;
+  color: var(--base);
+  margin: 0 10%;
+  padding: 5% 0;
+}
+
+.user-header h1 {
+  color: var(--pink);
+  margin-left: 20px;
+}
+
+.login-container {
+  height: 80vh;
+}
+
+.login-container-button {
+  font-size: 2em;
+  padding: 20px 100px;
+}
+
+.wardrobe-container {
+  background-color: white;
+}
+
+.wardrobe-container h1 {
+  background-color: var(--cognac);
+  color: var(--base);
+  padding: 20px;
+  margin: 0 10%;
+}
+
+.wardrobe {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 0 10%;
+  padding: 30px;
+}
+
+/* ///////////////////RESPONSIVE DESIGN //////////////////////*/
 
 @media only screen and (min-width: 768px) {
+  .user-box {
+    height: 30vh;
+  }
 
-    .user-box {
-        height: 30vh;
-      }
+  .user-box h1 {
+    font-size: 4em;
+  }
 
-    .user-box h1 {
-        font-size: 4em;
-      }
-
-      .user-header {
-        margin: 0 30%;
-      }
+  .user-header {
+    margin: 0 30%;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
