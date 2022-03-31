@@ -22,6 +22,7 @@ const Cart = (props) => {
     const [userData, setUserData] = useState({})
     const [cartItems, setCartItems] = useState([])
     const [wishlistItems, setWishlistItems] = useState([])
+    const [wardrobeItems, setWardrobeItems] = useState([])
 
     const fetchData = () => {
         fetch(props.urlBase + "/user/" + props.currentUser )
@@ -40,6 +41,9 @@ const Cart = (props) => {
       if (userData.wishlistItems != undefined) {
         setWishlistItems(userData.wishlistItems)
      }
+     if (userData.wardrobeItems != undefined) {
+        setWardrobeItems(userData.wardrobeItems)
+     }
     }, [userData])
 
     useEffect(() => {
@@ -49,10 +53,27 @@ const Cart = (props) => {
     
     //////////////////// PURCHASE ITEM FUNCTIONS ////////////////////
 
-    const removeCartItems = () => {
-        setCartItems([])
+    const removeWishlistItems = (item) => {
+        const wishlistFilter = wishlistItems.filter((n) => n._id != item)
         let data = {
-        cartItems: [],
+        wishlistItems: wishlistFilter,
+        };
+        let options = {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+        };
+        fetch(props.urlBase + "/user/" + props.currentUser, options)
+            .then((response) => response.json())
+    }
+
+    const removeCartItems = (item) => {
+        const cartFilter = cartItems.filter((n) => n._id != item)
+        setCartItems(cartFilter)
+        let data = {
+        cartItems: cartFilter,
         };
         let options = {
         method: "PUT",
@@ -66,9 +87,12 @@ const Cart = (props) => {
     }
 
 
-    const addToWardrobe = () => {
+    const addToWardrobe = (item) => {
+        const wardrobeCopy = [...wardrobeItems];
+        wardrobeCopy.push(item);
+        setWardrobeItems(wardrobeCopy);
         let data = {
-            wardrobeItems: cartItems,
+            wardrobeItems: wardrobeCopy,
             };
             let options = {
             method: "PUT",
@@ -79,12 +103,13 @@ const Cart = (props) => {
             };
             fetch(props.urlBase + "/user/" + props.currentUser, options)
                 .then((response) => response.json())
-        removeCartItems();
+        removeCartItems(item);
+        removeWishlistItems(item);
     }
 
     const handlePurchase = (event) => {
         event.preventDefault();
-        addToWardrobe();
+        addToWardrobe(event.target.id);
     }
 
 
@@ -127,6 +152,7 @@ const Cart = (props) => {
                         <h2>{item.title}</h2>
                         <h2>{item.brand} |    <span>${item.price}</span></h2>
                     </div>
+                    <button onClick={handlePurchase} id={item._id}>Purchased</button>
                 </div>
         )
     })
@@ -151,7 +177,6 @@ const Cart = (props) => {
                     <div className='cart-items'>
                         {list}
                     </div>
-                    <button onClick={handlePurchase}>Purchased</button>
                 </div>
             )}
             { showModal == true ? (
