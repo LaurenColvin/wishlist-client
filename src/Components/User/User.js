@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import Login from "../Login/Login";
 
+import './User.css'
+
 const User = (props) => {
 
      ////////////////// LOGIN MODAL //////////////////
