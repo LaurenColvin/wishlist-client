@@ -27,10 +27,10 @@ function App() {
         <ScrollTop>
           <Routes>
             <Route path="/" element={  <Home urlBase={urlBase} currentUser={currentUser} setCurrentUser={setCurrentUser} userName={userName} setUsername={setUsername}/> }/>
-            <Route path="/category" element={  <Category urlBase={urlBase} currentUser={currentUser} setCurrentUser={setCurrentUser} userName={userName} setUsername={setUsername}/> }/>
+            <Route path="/my-wishlist" element={  <Category urlBase={urlBase} currentUser={currentUser} setCurrentUser={setCurrentUser} userName={userName} setUsername={setUsername}/> }/>
             <Route path="/about" element={  <About/> }/>
             <Route path="/user" element={  <User urlBase={urlBase} currentUser={currentUser} setCurrentUser={setCurrentUser} userName={userName} setUsername={setUsername}/> }/>
-            <Route path="/cart" element={  <Cart urlBase={urlBase} currentUser={currentUser} setCurrentUser={setCurrentUser}/> }/>
+            <Route path="/cart" element={  <Cart urlBase={urlBase} currentUser={currentUser} setCurrentUser={setCurrentUser} userName={userName}/> }/>
           </Routes>
         </ScrollTop>
       </main>
