@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Login from "../Login/Login";
 import CategoryItems from "../CategoryItems/CategoryItems";
 
+import './Category.css'
 
 const Category = (props) => {
 
