@@ -73,6 +73,7 @@ const ItemCard = (props) => {
         <div className='card-header'>
             <h2>{props.item.title}</h2>
             <h2>{props.item.brand} |    <span>${props.item.price}</span></h2>
+            {props.item.size != undefined ? (<h3>{props.item.size} - {props.item.color}</h3>):(<div></div>)}
         </div>
     </div>
   );
