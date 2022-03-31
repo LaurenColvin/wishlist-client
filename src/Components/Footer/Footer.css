@@ -1,0 +1,35 @@
+/* FOOTER STYLING */
+
+footer {
+    background-color: var(--cream);
+    width: 100%;
+    margin: 0;
+    margin-top: 80px;
+    padding: 5px;
+  }
+  
+  footer p {
+    font-size: .5em;
+    text-align: right;
+    margin: 20px;
+  }
+  
+  button {
+    text-decoration: none;
+    font-weight: bold;
+    background-color: transparent;
+    color: var(--pink);
+    border: 1px solid;
+    border-color: var(--pink);
+    padding: 15px 25px;
+    margin: 30px;
+  }
+
+   /* ///////////////////RESPONSIVE DESIGN //////////////////////*/
+
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 1024px) {
+}
