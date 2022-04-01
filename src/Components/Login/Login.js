@@ -124,7 +124,7 @@ const Login = (props) => {
                 </form>
                 { duplicateUser == true ? (<h4>Sorry we already have a user with that email. Please use another email address.</h4>):(<div></div>)}
                 { accountCreated == true ? (<h4>Success! Your account has been created and you are logged in.</h4>):(<div></div>)}
-                <h2>LOGIN IN</h2>
+                <h2>LOGIN</h2>
                 <form className='new-user-form' onSubmit={handleLogin}>
                     <input onChange={userHandleChange} className="text-box" name="email" placeholder="Email" value={email} type="text" required/>
                     <br/>
