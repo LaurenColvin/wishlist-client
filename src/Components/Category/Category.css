@@ -14,7 +14,7 @@
 }
 
 .login-category {
-  font-size: 1em;
+  font-size: 1.5em;
   padding: 20px 50px;
   margin-bottom: 0;
 }
@@ -47,7 +47,7 @@
   padding: 15px 25px;
 }
 
-.no-user h2 {
+.no-user h3 {
   font-size: 2.2em;
   color: var(--cognac);
 }
