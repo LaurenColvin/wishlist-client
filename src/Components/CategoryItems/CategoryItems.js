@@ -112,7 +112,7 @@ const CategoryItems = (props) => {
             { props.currentUser != undefined ? (
                 <div className ='category-header'>
                         <h2>{props.category}</h2>
-                        {showMore == false ? (
+                        {showMore == true ? (
                                 <FontAwesomeIcon onClick={handleShowMore} className="view-more-icon" icon={faAngleUp} size="2x" style={{color:"#FEFCF5"}}/>
                             ):(
                                 <FontAwesomeIcon onClick={handleShowMore} className="view-more-icon" icon={faAngleDown} size="2x" style={{color:"#FEFCF5"}}/>
@@ -124,7 +124,7 @@ const CategoryItems = (props) => {
                     <h2>{props.category}</h2>
                     {categoryItems.length == 0 ? (<div></div>):(
                         <div>
-                            {showMore == false ? (
+                            {showMore == true ? (
                                 <FontAwesomeIcon onClick={handleShowMore} className="view-more-icon" icon={faAngleUp} size="2x" style={{color:"#FEFCF5"}}/>
                             ):(
                                 <FontAwesomeIcon onClick={handleShowMore} className="view-more-icon" icon={faAngleDown} size="2x" style={{color:"#FEFCF5"}}/>
