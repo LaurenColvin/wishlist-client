@@ -15,8 +15,6 @@ function App() {
 
   const urlBase = 'https://obscure-eyrie-60165.herokuapp.com'
 
-  console.log(urlBase);
-
   //////////// Current User UseState for all Components /////////////////
   const [currentUser, setCurrentUser] = useState("");
   const [userName, setUsername] = useState("");
