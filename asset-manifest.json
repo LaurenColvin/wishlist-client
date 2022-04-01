@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/wishlist-client/static/css/main.351980da.css",
-    "main.js": "/wishlist-client/static/js/main.a9831f52.js",
+    "main.css": "/wishlist-client/static/css/main.0c56023d.css",
+    "main.js": "/wishlist-client/static/js/main.3e3ab392.js",
     "static/media/hero-image.png": "/wishlist-client/static/media/hero-image.0b2c23101294fa16df78.png",
     "static/media/Headshot-dark.JPG": "/wishlist-client/static/media/Headshot-dark.1eb280592d7eff8ecae4.JPG",
     "static/media/Nesans Semi Bold.ttf": "/wishlist-client/static/media/Nesans Semi Bold.6b92368905cdd3022a91.ttf",
     "static/media/BreadleySans-Regular.ttf": "/wishlist-client/static/media/BreadleySans-Regular.161c910497b98f3a1565.ttf",
     "index.html": "/wishlist-client/index.html",
-    "main.351980da.css.map": "/wishlist-client/static/css/main.351980da.css.map",
-    "main.a9831f52.js.map": "/wishlist-client/static/js/main.a9831f52.js.map"
+    "main.0c56023d.css.map": "/wishlist-client/static/css/main.0c56023d.css.map",
+    "main.3e3ab392.js.map": "/wishlist-client/static/js/main.3e3ab392.js.map"
   },
   "entrypoints": [
-    "static/css/main.351980da.css",
-    "static/js/main.a9831f52.js"
+    "static/css/main.0c56023d.css",
+    "static/js/main.3e3ab392.js"
   ]
 }
