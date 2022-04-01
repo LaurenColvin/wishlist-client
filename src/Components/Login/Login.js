@@ -61,6 +61,7 @@ const Login = (props) => {
 
     ////////////////// FETCH USER DATA ////////////////////
 
+    const [userExists, setUserExists] = useState(true);
     const [email, setEmail] = useState("");
 
     const userHandleChange = (event) => {
@@ -71,10 +72,14 @@ const Login = (props) => {
     const handleLogin = (event) => {
         event.preventDefault();
         let loginUser = users.filter((n) => n.email === email);
+        if (loginUser.length == 0) {
+            setUserExists(false)
+        } else {
+            props.setCurrentUser(loginUser[0]._id);
+            props.setUsername(loginUser[0].firstName)
+            props.handleClose()
+        }
         setEmail("");
-        props.setCurrentUser(loginUser[0]._id);
-        props.setUsername(loginUser[0].firstName)
-        props.handleClose()
     }
 
     return (
@@ -102,6 +107,7 @@ const Login = (props) => {
                     <br/>
                     <input className="login-button" type="submit" value="LOGIN"></input>
                 </form>
+                { userExists == false ? (<h4>We do not have record of your email. Please create an account to continue</h4>):(<div></div>)}
             </div>
         </div>
     )
