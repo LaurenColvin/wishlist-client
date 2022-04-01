@@ -36,7 +36,9 @@
 
 body {
   background-color: var(--base);
+  overflow-x:hidden;
 }
+
 
 /*//////////////////// USER LOGIN ////////////////////*/
 
