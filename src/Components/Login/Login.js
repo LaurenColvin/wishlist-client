@@ -37,26 +37,44 @@ const Login = (props) => {
 
     ////////////////// POST NEW USER //////////////////////////
 
+    const [accountCreated, setAccountCreated] = useState(false)
+    const [duplicateUser, setDuplicateUser] = useState(false)
+
     const handleSubmit = (event) => {
+        setAccountCreated(false);
+        let email = newUser.email
+        let lowercase = email.toLowerCase()
         event.preventDefault();
-        let options = {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(newUser),
-          };
-        fetch(props.urlBase + '/user', options)
-            .then((response) => response.json())
-            .then((data) => props.setCurrentUser(data.user._id))
-            .then(() => props.setUsername(newUser.firstName))
-            .then(() => setNewUser({
+        let loginUser = users.filter((n) => n.email.toLowerCase() == lowercase);
+        if (loginUser.length > 0) {
+            setDuplicateUser(true)
+            setNewUser({
                 firstName: "",
                 lastName: "",
                 email: "",
                 budget: Number,
-            }))
-            .then(() => props.handleClose())
+            })
+        } else {
+            setDuplicateUser(false)
+            let options = {
+                method: "POST",
+                headers: {
+                "Content-Type": "application/json",
+                },
+                body: JSON.stringify(newUser),
+            };
+            fetch(props.urlBase + '/user', options)
+                .then((response) => response.json())
+                .then((data) => props.setCurrentUser(data.user._id))
+                .then(() => props.setUsername(newUser.firstName))
+                .then(() => setNewUser({
+                    firstName: "",
+                    lastName: "",
+                    email: "",
+                    budget: Number,
+                }))
+                .then(() => setAccountCreated(true))
+        }
     };
 
     ////////////////// FETCH USER DATA ////////////////////
@@ -70,8 +88,11 @@ const Login = (props) => {
     }
 
     const handleLogin = (event) => {
+        setUserExists(false);
+        setAccountCreated(false);
+        setDuplicateUser(false);
         event.preventDefault();
-        let loginUser = users.filter((n) => n.email === email);
+        let loginUser = users.filter((n) => n.email.toLowerCase() === email.toLowerCase());
         if (loginUser.length == 0) {
             setUserExists(false)
         } else {
@@ -101,6 +122,8 @@ const Login = (props) => {
                     <br/>
                     <input className="login-button" type="submit" value="Submit"></input>
                 </form>
+                { duplicateUser == true ? (<h4>Sorry we already have a user with that email. Please use another email address.</h4>):(<div></div>)}
+                { accountCreated == true ? (<h4>Success! Your account has been created and you are logged in.</h4>):(<div></div>)}
                 <h2>LOGIN IN</h2>
                 <form className='new-user-form' onSubmit={handleLogin}>
                     <input onChange={userHandleChange} className="text-box" name="email" placeholder="Email" value={email} type="text" required/>
