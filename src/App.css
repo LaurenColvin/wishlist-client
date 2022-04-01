@@ -83,7 +83,7 @@ body {
   z-index: 3;
   position: fixed;
   top: 80px;
-  height: 550px;
+  height: 600px;
   width: 90vw;
   left: 0;
   right: 0;
@@ -139,7 +139,7 @@ body {
   right: 0;
   margin: 0 auto;
   width: 80vw;
-  height: 530px;
+  height: 600px;
 }
 
 .modal h3 {
@@ -177,7 +177,7 @@ body {
 
 .about-text p {
   margin-top: 10%;
-  font-size: 1em;
+  font-size: 1.2em;
   border: 1px solid;
   padding: 10px 20px;
 }
@@ -201,7 +201,7 @@ body {
 }
 
 .intro-text p {
-  font-size: 1em;
+  font-size: 1.2em;
   padding: 0;
   margin: 30px;
   margin-bottom: 50px;

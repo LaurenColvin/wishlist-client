@@ -39,6 +39,11 @@ nav {
   padding: 20px 0;
 }
 
+.nav-bar-open h3 {
+  margin: 10px 20px;
+  font-size: 1.5em;
+}
+
 .icons {
   font-size: 0.8em;
   position: absolute;
