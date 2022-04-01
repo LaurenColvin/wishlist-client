@@ -81,12 +81,12 @@ const CategoryItems = (props) => {
     const [categoryItems, setCategoryItems] = useState([])
 
     useEffect(() => {
-    let itemsList = props.items.filter((n) => n.category === props.category);
+    let itemsList = props.items.filter((n) => n.category.toLowerCase() == props.category.toLowerCase());
     setCategoryItems(itemsList)  
       }, []);
 
     useEffect(() => {
-    let itemsList = props.items.filter((n) => n.category === props.category);
+    let itemsList = props.items.filter((n) => n.category.toLowerCase() == props.category.toLowerCase());
     setCategoryItems(itemsList)  
         }, [props.items.length]);
 
