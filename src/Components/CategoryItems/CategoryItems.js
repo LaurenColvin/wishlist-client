@@ -16,6 +16,8 @@ import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 
 const CategoryItems = (props) => {
 
+    console.log(props.currentUser);
+
     ////////////////// CATEGORY MENU //////////////////
 
     const [showMenu, setShowMenu] = useState(false);
@@ -109,7 +111,7 @@ const CategoryItems = (props) => {
 
     return (
         <div className='category-box'>
-            { props.currentUser != undefined ? (
+            { props.currentUser == '' ? (
                 <div className ='category-header'>
                         <h2>{props.category}</h2>
                         {showMore == true ? (
