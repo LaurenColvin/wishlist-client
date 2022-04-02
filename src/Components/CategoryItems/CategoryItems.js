@@ -16,8 +16,6 @@ import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 
 const CategoryItems = (props) => {
 
-    console.log(props.currentUser);
-
     ////////////////// CATEGORY MENU //////////////////
 
     const [showMenu, setShowMenu] = useState(false);
@@ -137,19 +135,32 @@ const CategoryItems = (props) => {
                     <FontAwesomeIcon onClick={handleMenu} className="more-icon" icon={faEllipsis} size="2x" style={{color:"#FEFCF5"}}/>
                 </div>
             )}
-            { showMenu == true ? (
-                <div className='category-menu'>
-                    <button className='mobile-button' onClick={handleShow}>Add New Item</button>
-                    <button className='category-button' onClick={handleDeleteItems}>Delete Item</button>
-                    <button className='category-button' id={props.category} onClick={handleDeleteCategory}>Delete Category</button>
+            {categoryItems.length == 0 ? (
+                <div>
+
+                    { showMenu == true ? (
+                        <div className='no-item-category-menu'>
+                            <button className='mobile-button' onClick={handleShow}>Add New Item</button>
+                            <button className='category-button' onClick={handleDeleteItems}>Delete Item</button>
+                            <button className='category-button' id={props.category} onClick={handleDeleteCategory}>Delete Category</button>
+                        </div>
+                    ):(
+                        <div>
+                            <button className='add-item-button' onClick={handleShow}>Add Item</button>
+                        </div>
+                    )}
                 </div>
             ):(
-                <div></div>
-            )}
-            {categoryItems.length == 0 ? (
-              <button className='add-item-button' onClick={handleShow}>Add Item</button>
-            ):(
                 <div>
+                    { showMenu == true ? (
+                        <div className='category-menu'>
+                            <button className='mobile-button' onClick={handleShow}>Add New Item</button>
+                            <button className='category-button' onClick={handleDeleteItems}>Delete Item</button>
+                            <button className='category-button' id={props.category} onClick={handleDeleteCategory}>Delete Category</button>
+                        </div>
+                    ):(
+                        <div></div>
+                    )}
                     {showMore == false ? (<div className='category-items'>{list}</div>):(<h3 className='item-count'><span>{categoryItems.length}</span> items saved . . .</h3>)}
                 </div>
             )}

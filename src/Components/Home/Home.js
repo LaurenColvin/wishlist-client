@@ -24,7 +24,7 @@ const Home = (props) => {
         <div className='home-page'>
             <div className='hero-image'>
                 <h1>Shop Smarter,<br/> Not Harder.</h1>
-                <button className='button' onClick={handleShow}>Start Dreaming</button>
+                <Link to='/my-wishlist'><button className='button'>Start Dreaming</button></Link>
             </div>
             <div className='about-page'>
                 <div className='about-box'>
@@ -63,10 +63,17 @@ const Home = (props) => {
                     </div>
                 </div>
             </div>
-            <div className='user-login'>
+            { props.currentUser != "" ? (
+                <div className='user-login'>
+                <h2>Ready to get started?</h2>
+                <Link to='/my-wishlist'><button className='button'>Add a Category</button></Link>
+            </div>
+            ):(
+                <div className='user-login'>
                 <h2>Ready to get started?</h2>
                 <button className='button' onClick={handleShow}>User Login</button>
-            </div>
+                </div>
+            )}
             <div className='trending'>
                 <h2>Popular Categories</h2>
                 <Link className='category-link' to='/my-wishlist'>

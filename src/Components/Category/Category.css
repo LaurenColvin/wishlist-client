@@ -126,6 +126,8 @@
   margin: 10px;
 }
 
+
+
 .mobile-button {
   font-size: 1em;
   background-color: var(--green);
@@ -139,6 +141,7 @@
 
 .add-item-button {
   font-size: 1.5em;
+  width: 30%;
   margin: 0 70px;
   background-color: var(--green);
   color: var(--base);
@@ -150,13 +153,31 @@
 }
 
 .category-menu {
-  background-color: var(--base);
-  margin-top: 70px;
+  background-color: white;
+  margin-top: 80px;
   margin-bottom: -100px;
-  z-index: 2;
   /* position: absolute;
     top: 0;
     right: 0; */
+}
+
+.no-item-category-menu {
+  background-color: white;
+  margin-top: 0;
+  margin-bottom: -100px;
+}
+
+.cart-success {
+  z-index: 2;
+  position: fixed;
+  top: 60px;
+  right: 0;
+  background-color: var(--pink);
+}
+
+.cart-success h4 {
+  color: var(--base);
+  padding: 30px;
 }
 
 /* ///////////////////RESPONSIVE DESIGN //////////////////////*/
