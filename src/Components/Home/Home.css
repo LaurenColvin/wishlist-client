@@ -110,24 +110,28 @@
   position: relative;
   display: flex;
   background-color: var(--cream);
+  width: 30%;
+  /* height: 100px; */
+  padding: 20px;
+  margin: 10px;
 }
 
 .rule h3 {
   position: absolute;
+  top: -20px;
   color: var(--cream);
-  font-size: 2em;
+  font-size: 1.8em;
   background-color: var(--pink);
   border-radius: 100px;
-  width: 70px;
-  height: 70px;
-  margin-left: -50px;
+  width: 40px;
+  height: 40px;
+  margin-left: -35px;
 }
 
 .instructions-container h4 {
   color: var(--pink);
   font-size: 1.5em;
   margin: auto;
-  margin-top: -90px;
   padding: 5px;
 }
 
@@ -184,12 +188,16 @@
     font-size: 3em;
     left: 15px;
     top: -40px;
+    width: 70px;
+    height: 70px;
+    margin-left: -50px;
+  }
+  
+  .instructions-container h4 {
+    font-size: 2em;
+    padding: 5px;
   }
 
-  .rule h4 {
-    font-size: 2em;
-    margin: 40px 15px;
-  }
 }
 
 @media only screen and (min-width: 1024px) {
