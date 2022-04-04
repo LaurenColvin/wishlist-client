@@ -24,13 +24,7 @@ const ItemCard = (props) => {
 
     const [addToCart, setAddToCart] = useState(false);
     const [cartSuccess, setCartSuccess] = useState(false);
-
-    useEffect(()=>{
-        setCartSuccess(true)
-        setTimeout(function() {
-            setCartSuccess(false);
-             }, 3000);
-    }, [addToCart])
+    const [cartRemove, setCartRemove] = useState(false);
 
 
     ////////////////// COLOR CHANGE FOR ICONS //////////////////
@@ -52,9 +46,17 @@ const ItemCard = (props) => {
         let itemsCopy = []
         if (check.length >= 1) {
             itemsCopy = props.cartItems.filter((n) => n._id != props.item._id);
+            setCartRemove(true)
+            setTimeout(function() {
+                setCartRemove(false);
+                }, 1000);
         } else {
             itemsCopy = [...props.cartItems];
             itemsCopy.push(item);
+            setCartSuccess(true)
+            setTimeout(function() {
+                setCartSuccess(false);
+                }, 1000);
         }
         props.setCartItems(itemsCopy)
         let data = {
@@ -107,6 +109,11 @@ const ItemCard = (props) => {
                 { cartSuccess == true ? (
                     <div className='cart-success'>
                         <h4>Added to cart!</h4>
+                    </div>
+                ):(<div></div>)}
+                { cartRemove == true ? (
+                    <div className='cart-success'>
+                        <h4>Removed from cart!</h4>
                     </div>
                 ):(<div></div>)}
             </div>
