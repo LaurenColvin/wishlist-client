@@ -1,5 +1,10 @@
 /* ////////////////////////// USER PAGE STYLING //////////////////////////////// */
 
+.user-page {
+  min-height: 80vh;
+  background-color: var(--base);
+}
+
 .user-box {
   background-color: var(--green);
 }
@@ -35,10 +40,6 @@
   padding: 20px 100px;
 }
 
-.wardrobe-container {
-  background-color: white;
-}
-
 .wardrobe-container h1 {
   background-color: var(--cognac);
   color: var(--base);
@@ -47,11 +48,20 @@
 }
 
 .wardrobe {
+  margin: 0 10%;
+  padding: 30px;
+  background-color: white;
+}
+
+.wardrobe-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin: 0 10%;
-  padding: 30px;
+}
+
+.wardrobe h3 {
+  font-size: 1.5em;
+  color: var(--cognac);
 }
 
 /* ///////////////////RESPONSIVE DESIGN //////////////////////*/

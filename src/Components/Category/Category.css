@@ -1,5 +1,9 @@
 /* ////////////////////////// CATEGORY PAGE STYLING //////////////////////////////// */
 
+.category-page {
+  min-height: 80vh;
+}
+
 .welcome-box {
   background-color: var(--cognac);
 }
@@ -125,8 +129,6 @@
   border: none;
   margin: 10px;
 }
-
-
 
 .mobile-button {
   font-size: 1em;

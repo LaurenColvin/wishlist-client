@@ -8,9 +8,6 @@ import AddItems from '../AddItems/AddItems'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCirclePlus} from '@fortawesome/free-solid-svg-icons'
 import {faEllipsis} from '@fortawesome/free-solid-svg-icons'
-import {faEllipsisVertical} from '@fortawesome/free-solid-svg-icons'
-import {faCircleCheck} from '@fortawesome/free-solid-svg-icons'
-import {faBars} from '@fortawesome/free-solid-svg-icons'
 import { faAngleUp } from '@fortawesome/free-solid-svg-icons'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 
@@ -53,14 +50,6 @@ const CategoryItems = (props) => {
         props.handleDeleteCategory(event);
         setShowMenu(false);
     }
-
-    //////////////// FILTER WARDROBE CATEGORY //////////////
-
-    // useEffect(() => {
-    //     let wardrobeCategory = props.items.filter((n) => n.category === props.category);
-    //     setCategoryItems(itemsList)  
-    // }, []);
-    
 
     ////////////////// ADD ITEMS MODAL //////////////////
 

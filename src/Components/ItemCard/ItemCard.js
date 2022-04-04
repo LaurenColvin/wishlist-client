@@ -1,34 +1,26 @@
 import { useState, useEffect } from 'react'
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faCircleCheck, faH} from '@fortawesome/free-solid-svg-icons'
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import {faCircleCheck} from '@fortawesome/free-solid-svg-icons'
 
 import './ItemCard.css'
 
 const ItemCard = (props) => {
 
-     //////////////// FETCH ALL CART ITEMS ///////////////////
+    //////////////// FETCH ALL CART ITEMS ///////////////////
 
-    //  const [allCartItems, setAllCartItems] = useState([]);
+    const fetchData = () => {
+        if (props.currentUser != "") {
+            fetch(props.urlBase + "/user/" + props.currentUser )
+                .then((response) => response.json())
+                .then((data) => props.setCartItems(data.user.cartItems))
+        }
+    }
 
-     const fetchData = () => {
-         if (props.currentUser != "") {
-             fetch(props.urlBase + "/user/" + props.currentUser )
-             .then((response) => response.json())
-             .then((data) => props.setCartItems(data.user.cartItems))
-         }
-     }
+    ////////////////// ADD TO CART ALERTS //////////////////
 
-    ////////////////// ADD TO CART SUCCESS //////////////////
-
-    const [addToCart, setAddToCart] = useState(false);
     const [cartSuccess, setCartSuccess] = useState(false);
     const [cartRemove, setCartRemove] = useState(false);
-
-
-    ////////////////// COLOR CHANGE FOR ICONS //////////////////
-
     const [checkMark, setCheckMark] = useState(false);
 
     useEffect(() => {
@@ -39,7 +31,11 @@ const ItemCard = (props) => {
         } else {
             setCheckMark(false)
         }
-      }, []);
+    }, []);
+
+
+    ////////////////// PUT IN CART FUNCTION //////////////////
+
 
     const putItemCart = (item) => {
         let check = props.cartItems.filter((n) => n._id === props.item._id);
@@ -49,25 +45,21 @@ const ItemCard = (props) => {
             setCartRemove(true)
             setTimeout(function() {
                 setCartRemove(false);
-                }, 1000);
+            }, 1000);
         } else {
             itemsCopy = [...props.cartItems];
             itemsCopy.push(item);
             setCartSuccess(true)
             setTimeout(function() {
                 setCartSuccess(false);
-                }, 1000);
+            }, 1000);
         }
         props.setCartItems(itemsCopy)
-        let data = {
-        cartItems: itemsCopy,
-        };
+        let data = {cartItems: itemsCopy,};
         let options = {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+            method: "PUT",
+            headers: {"Content-Type": "application/json",},
+            body: JSON.stringify(data),
         };
         fetch(props.urlBase + "/user/" + props.currentUser, options)
             .then((response) => response.json())
@@ -79,14 +71,15 @@ const ItemCard = (props) => {
         putItemCart(props.item._id)
         setCheckMark(!checkMark)
         props.setEditItem(!props.editItem)
-        setAddToCart(!addToCart)
     };
 
   return (
       <div>
         { props.currentUser == "" ? (
             <div className='item-card'>
-                <a href={props.item.link} target='_blank'><img className='item-image' src={props.item.imgUrl} alt={props.item.title}/></a>
+                <a href={props.item.link} target='_blank'>
+                    <img className='item-image' src={props.item.imgUrl} alt={props.item.title}/>
+                </a>
                 {props.deleteX === false ? (<div></div>):(<h4 onClick={props.handleDeleteItem} className='delete-icon' id={props.item._id}>x</h4>)}
                 <div className='card-header'>
                     <h2>{props.item.title}</h2>
@@ -97,7 +90,9 @@ const ItemCard = (props) => {
         ):(  
             <div>
                 <div className='item-card'>
-                    <a href={props.item.link} target='_blank'><img className='item-image' src={props.item.imgUrl} alt={props.item.title}/></a>
+                    <a href={props.item.link} target='_blank'>
+                        <img className='item-image' src={props.item.imgUrl} alt={props.item.title}/>
+                    </a>
                     {props.deleteX === false ? (<div></div>):(<h4 onClick={props.handleDeleteItem} className='delete-icon' id={props.item._id}>x</h4>)}
                     <FontAwesomeIcon onClick={handleAddCart} icon={faCircleCheck} className='add-to-cart' size="1x" style={checkMark == false ? ({color:"#FA5272"}):({color:"#BFC199"})} />
                     <div className='card-header'>

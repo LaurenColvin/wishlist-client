@@ -1,53 +1,54 @@
 /* ////////////////////////// CART PAGE STYLING //////////////////////////////// */
 
-.cart-box {
-    background-color: var(--cognac);
-  }
-  
-  .cart-box h1 {
-    font-size: 3em;
-    line-height: 1em;
-    letter-spacing: .05em;
-    color: var(--base);
-    margin: 0 10%;
-    padding: 5% 0;
-  }
-  
-  .cart-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    /* border: 3px solid;
-    border-color: var(--cognac); */
-    margin: 0 10%;
-    padding: 30px;
-  }
-  
-  .progress-bar {
-    background-color: var(--pink);
-    height: 30px;
-    margin: 20px 20%;
-    border-radius: 30px;
-  }
-  
-  .inner-progress-bar {
-    margin: 20px 20%;
-    background-color: var(--green);
-    height: 30px;
-    border-radius: 30px;
-  }
-  
-  .price {
-    text-align: right;
-    margin: 0;
-    padding: 2px 10px;
-    font-size: 1.3em;
-  }
+.cart-page {
+  min-height: 80vh;
+}
 
-  /* ///////////////////RESPONSIVE DESIGN //////////////////////*/
+.cart-box {
+  background-color: var(--cognac);
+}
+
+.cart-box h1 {
+  font-size: 3em;
+  line-height: 1em;
+  letter-spacing: 0.05em;
+  color: var(--base);
+  margin: 0 10%;
+  padding: 5% 0;
+}
+
+.cart-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 0 10%;
+  padding: 30px;
+}
+
+.progress-bar {
+  background-color: var(--pink);
+  height: 30px;
+  margin: 20px 20%;
+  border-radius: 30px;
+}
+
+.inner-progress-bar {
+  margin: 20px 20%;
+  background-color: var(--green);
+  height: 30px;
+  border-radius: 30px;
+}
+
+.price {
+  text-align: right;
+  margin: 0;
+  padding: 2px 10px;
+  font-size: 1.3em;
+}
+
+/* ///////////////////RESPONSIVE DESIGN //////////////////////*/
 
 @media only screen and (min-width: 768px) {
-
   .cart-box {
     height: 30vh;
   }
@@ -55,7 +56,6 @@
   .cart-box h1 {
     font-size: 4em;
   }
-
 }
 
 @media only screen and (min-width: 1024px) {

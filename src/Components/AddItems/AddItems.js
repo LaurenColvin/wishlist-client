@@ -6,7 +6,7 @@ import {faXmark} from '@fortawesome/free-solid-svg-icons'
 
 const AddItems = (props) => {
 
-     //////////////// FETCH ALL ITEMS ///////////////////
+    //////////////// FETCH ALL ITEMS ///////////////////
 
     const [allItems, setAllItems] = useState([]);
 
@@ -24,6 +24,7 @@ const AddItems = (props) => {
 
 
     ////////////////// USE STATE FOR FORM INPUT /////////////////////
+    
     const [newItem, setNewItem] = useState({
             category: props.category,
             title: "",
@@ -87,7 +88,6 @@ const AddItems = (props) => {
         };
         fetch(props.urlBase + "/user/" + props.currentUser, options)
             .then((response) => response.json())
-            .then((data) => console.log(data));
     };
 
     const handleSubmit = (event) => {
@@ -95,13 +95,6 @@ const AddItems = (props) => {
         postItem();
         props.handleClose()
     };
-
-    // const handleAddAnother = (event) => {
-    //     event.preventDefault();
-    //     fetchData()
-    //     postItem();
-    //     fetchData();
-    // }
 
     return (
         <div className='add-items'>
@@ -129,7 +122,6 @@ const AddItems = (props) => {
                     <input onChange={handleChange} className="text-box" name="color" placeholder="Color" value={newItem.color} type="text"/>
                     <br/>
                     <input className="login-button" type="submit" value="Submit"></input>
-                    {/* <button className="login-button" onClick={handleAddAnother}>Add Another</button> */}
                 </form>
             </div>
         </div>

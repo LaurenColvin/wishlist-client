@@ -124,9 +124,7 @@ const Cart = (props) => {
 
         sum += item.price;
 
-
         //////////////////// REMOVE CART ITEMS ////////////////////
-
 
         const removeItem = (event) => {
             event.preventDefault();

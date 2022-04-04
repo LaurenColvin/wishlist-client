@@ -102,42 +102,34 @@
   justify-content: space-evenly;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 0 5%;
+  margin: 0 2% 0 5%;
   padding-bottom: 55px;
 }
 
 .rule {
   position: relative;
-  width: 30%;
-  height: 150px;
-  padding: 20px;
-  margin: 10px;
+  display: flex;
   background-color: var(--cream);
-  border-radius: 40px;
 }
 
 .rule h3 {
   position: absolute;
-  top: -20px;
-  left: 0;
-  color: var(--pink);
+  color: var(--cream);
   font-size: 2em;
-  margin-bottom: 180px;
-  margin-left: 10px;
+  background-color: var(--pink);
+  border-radius: 100px;
+  width: 70px;
+  height: 70px;
+  margin-left: -50px;
 }
 
-.rule h4 {
+.instructions-container h4 {
   color: var(--pink);
   font-size: 1.5em;
   margin: auto;
-  padding: 0 5px;
+  margin-top: -90px;
+  padding: 5px;
 }
-
-
-
-
-
-
 
 /* ////////////////////////////////////RESPONSIVE DESIGN ////////////////////////////////////////////*/
 
@@ -198,13 +190,10 @@
     font-size: 2em;
     margin: 40px 15px;
   }
-
 }
 
 @media only screen and (min-width: 1024px) {
-
-    .trending-category {
-        width: 30%;
-      }
-
+  .trending-category {
+    width: 30%;
+  }
 }

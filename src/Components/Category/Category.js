@@ -7,18 +7,6 @@ import './Category.css'
 
 const Category = (props) => {
 
-  const fetchData = () => {
-    if (props.currentUser != "") {
-      fetch(props.urlBase + "/user/" + props.currentUser )
-        .then((response) => response.json())
-        .then((data) => setUserData(data.user))
-    } else {
-      fetch(props.urlBase + "/user/624649460020e783d135564d" )
-        .then((response) => response.json())
-        .then((data) => setUserData(data.user))
-    }
-}
-
   ////////////////// LOGIN MODAL //////////////////
 
   const [showModal, setShowModal] = useState(false);
@@ -41,17 +29,21 @@ const Category = (props) => {
   const [wardrobeItems, setWardrobeItems] = useState([]);
   const [editItem, setEditItem] = useState(false)
 
-  useEffect(() => {
-      fetchData()
-    }, []);
+  const fetchData = () => {
+    if (props.currentUser != "") {
+      fetch(props.urlBase + "/user/" + props.currentUser )
+        .then((response) => response.json())
+        .then((data) => setUserData(data.user))
+    } else {
+      fetch(props.urlBase + "/user/624649460020e783d135564d" )
+        .then((response) => response.json())
+        .then((data) => setUserData(data.user))
+    }
+  }
 
   useEffect(() => {
       fetchData()
-    }, [showModal]);
-
-  useEffect(() => {
-      fetchData()
-    }, [editItem]);
+    }, [showModal, editItem]);
 
   useEffect(() => {
     if (userData.categories != undefined) {
@@ -71,8 +63,6 @@ const Category = (props) => {
   //////////////// SET CATEGORIES //////////////////
 
   const [category, setCategory] = useState("");
-
-
 
   const categoryHandleChange = (event) => {
       event.preventDefault();
@@ -96,9 +86,7 @@ const Category = (props) => {
       };
       fetch(props.urlBase + "/user/" + props.currentUser, options)
         .then((response) => response.json())
-        .then((data) => console.log(data));
       setCategory("");
-      console.log(category)
   };
 
   ////////////// EDIT CATGORY LIST /////////////////////
@@ -118,10 +106,11 @@ const Category = (props) => {
     };
     fetch(props.urlBase + "/user/" + props.currentUser, options)
       .then((response) => response.json())
-      .then((data) => console.log(data));
     setEditItem(!editItem)
 }
 
+
+  ////////////// MAP THROUGH CATEGORY LIST /////////////////////
 
 
   const list = categoryList.map((category, index) => {
