@@ -1,8 +1,9 @@
 # :dress: Wishlist  :sandal:
-MERN Fullstack Application.  
-<!-- Check out the [live site!](https://laurencolvin.github.io/my-health-client/)   
-[Deployed Backend Link](https://pure-anchorage-47818.herokuapp.com/)   
-[Github Repository for Backend](https://github.com/LaurenColvin/my-health-api) -->
+MERN Fullstack Application.
+
+Check out the [live site!](https://laurencolvin.github.io/wishlist-client/#/)   
+[Deployed Backend Link](https://obscure-eyrie-60165.herokuapp.com/)   
+[Github Repository for Backend](https://github.com/LaurenColvin/wishlist-api)
 
 ## Project Description
 
@@ -10,8 +11,8 @@ Wishlist is an online shopping app to help you plan your purchases. So much bett
 
 
 This app includes a backend database using MongoDB and Express.js and a frontend web application using Node.js and React.
-<!-- 
-![alt text](./src/assets/My-Health-App.png) -->
+
+![desktop screenshot](./src/assets/Wishlist-App.png)
 
 ## Project Schedule
 
@@ -19,13 +20,13 @@ This app includes a backend database using MongoDB and Express.js and a frontend
 | ----- | ------------------------------------ | ---------- |
 | Day 1 | Planning and Approval                | Complete   |
 | Day 1 | Set up backend files and structure   | Complete   |
-| Day 2 | Test and deploy backend              | Incomplete   |
+| Day 2 | Test and deploy backend              | Complete   |
 | Day 2 | Set up frontend files and structure  | Complete   |
-| Day 3 | Add algorithm sorting method         | Incomplete   |
-| Day 4 | CSS Styling and Responsive Design    | Incomplete   |
-| Day 5 | MVP & Bug Fixes & Adding Seed Data   | Incomplete  |
-| Day 6 | Final Touches and deploying frontend | Incomplete   |
-| Day 7 | Present                              | Incomplete |
+| Day 3 | Add algorithm sorting method         | Complete   |
+| Day 4 | CSS Styling and Responsive Design    | Complete   |
+| Day 5 | MVP & Bug Fixes & Adding Seed Data   | Complete  |
+| Day 6 | Final Touches and deploying frontend | Complete   |
+| Day 7 | Present                              | Complete |
 
 
 ## User Stories
@@ -40,7 +41,7 @@ Finally once the purchase has been made their new item will be added to their wa
 
 - [Mobile](https://drive.google.com/file/d/1dCeo_mIjLAYyyYHV_93LgRJ0D0fYvI7I/view?usp=sharing)
 - [Desktop](https://drive.google.com/file/d/1hPq69KIWkQP0rKx7H7kZRMSp_uDjQ5kz/view?usp=sharing)
-<!-- - [Desktop-2](https://drive.google.com/file/d/1YA1TPEQ6BQTE6yx1dnFqGhxMApwEcMx_/view?usp=sharing) -->
+
 
 ### MVP/PostMVP
 
@@ -48,7 +49,7 @@ Finally once the purchase has been made their new item will be added to their wa
 
 - 2 models for data (User, Item)
 - CRUD functionality (Add User, Add Item, View Items, Edit Item/User, Delete Item/User)
-- Have 4 Routes and components on frontend (Home, Wishlist Page, My Wardrobe, Cart, About)
+- Have 4 Routes and multiple components on frontend (Home, Wishlist Page, My Wardrobe, Cart, About)
 - Fetch data from backend API
 - Responsive design from mobile to desktop
 - Add sorting algorithm for items
@@ -70,30 +71,30 @@ Finally once the purchase has been made their new item will be added to their wa
 
 | Component                          | Priority | Estimated Time | Actual Time |
 | ---------------------------------- | :------: | :------------: | :---------: |
-| Installing and Setup for backend   |    H     |      1hr       |     0hr     |
-| Models and Schemas                 |    H     |      2hr       |     0hr     |
-| CRUD Routes and testing on Postman |    H     |      3hr       |     0hr     |
-| Deploying backend                  |    H     |     1.5hr      |     0hr     |
-| Creating React App                 |    H     |      1hr       |     0hr     |
-| Add Routes                         |    H     |      1hrs      |    0hr    |
-| Create Components                  |    H     |      6hrs      |     0hr     |
-| Fetch and test data on frontend    |    H     |      3hr       |     0hr     |
-| Add Sorting Algorithm             |    H     |      5hr       |     0hr     |
-| Responsive Design                  |    H     |      6hr       |     0hr     |
-| CSS and Bootstrap                  |    L     |      4hr       |     0hr     |
-| Deploy frontend                    |    L     |      1hr       |     0hr     |
-| Total                              |    H     |    40.5hrs     |   0hrs   |
+| Installing and Setup for backend   |    H     |      1hr       |     1hr     |
+| Models and Schemas                 |    H     |      2hr       |     2hr     |
+| CRUD Routes and testing on Postman |    H     |      3hr       |     3hr     |
+| Deploying backend                  |    H     |     1.5hr      |     1hr     |
+| Creating React App                 |    H     |      1hr       |     1hr     |
+| Add Routes                         |    H     |      1hrs      |    1hr    |
+| Create Components                  |    H     |      6hrs      |     12hr     |
+| Fetch and test data on frontend    |    H     |      3hr       |     3hr     |
+| Add Sorting Algorithm             |    H     |      5hr       |     2hr     |
+| Responsive Design                  |    H     |      6hr       |     6hr     |
+| CSS and Bootstrap                  |    L     |      4hr       |     4hr     |
+| Deploy frontend                    |    L     |      1hr       |     1hr     |
+| Total                              |    H     |    40.5hrs     |   39hrs   |
 
 #### PostMVP
 
 | Component                          | Priority | Estimated Time | Actual Time |
 | ---------------------------------- | :------: | :------------: | :---------: |
-| Budgeting and Total Closet Worth   |    L     |      1hr       |     hr      |
+| Budgeting and Total Closet Worth   |    L     |      1hr       |     1hr      |
 | Add Gestalt UI/UX library           |    L     |      3hr       |     hr      |
 | Suggestion Page                    |    M     |      4hr       |     hr      |
-| Login Authentication               |    H     |      4hr       |     hr      |
-| Animations                         |    H     |      4hr       |     hr     |
-| Total                              |    H     |     16hrs      |    hrs     |
+| Login Authentication               |    H     |      4hr       |     2hr      |
+| Animations                         |    H     |      4hr       |     2hr     |
+| Total                              |    H     |     16hrs      |    5hrs     |
 
 
 ## Models
@@ -101,11 +102,15 @@ Finally once the purchase has been made their new item will be added to their wa
 ```js
 
 User = {
-    name : String,
-    email : String,
+    firstName: String,
+    lastName: String,
+    email: String,
     budget: Number,
-    items : [],
-    archive : []
+    categories: [],
+    wishlistItems: [],
+    cartItems : [],
+    wardrobeItems : [],
+    archiveItems : [],
 }
 
 Item = {
@@ -113,9 +118,10 @@ Item = {
     title : String,
     brand: String,
     price : Number,
+    size: String,
+    color: String,
     link : String,
     imgUrl : String
-}
 
 ```
 
@@ -135,13 +141,17 @@ Item = {
 
 ## Functional Components
 
-[Diagram](https://drive.google.com/file/d/12yXKdHAC7mbXVDHSVQc93ePHg5KbvaGM/view?usp=sharing)
+[Diagram](https://drive.google.com/file/d/17cGjAESupnZ7Q0qaaunMyn2rSg3j8hVc/view?usp=sharing)
 
 | Component               |                  Description                  |
 | ----------------------- | :-------------------------------------------: |
 | Home                    |     Landing Page with how to use the site     |
-| Categories          |           Form for adding a wishlist category and items           |
-| My Wardrobe         |    Include all purchased items you now own     |
+| Login                    |     Login Modal with form to create user     |
+| My Wishlist          |           Form for adding a wishlist category and items           |
+| Category Items           |    Individual category sections with items     |
+| Item Cards                    |     Each item card with add to cart function    |
+| Add Items                    |     Add Item modal with form for new items     |
+| User Page         |    Include all purchased items you now own     |
 | Cart |         Add items to your cart to compare with your budget         |
 | About             |          Photos and description of website          |
 | Header                  |                 Logo and Menu                 |
@@ -151,19 +161,37 @@ Item = {
 
 ## Additional Libraries
 
-
+[Font Awesome Icons](https://fontawesome.com/)
 
 ## Code Snippet
 
-Add snippet here:
+Here is my function that adds or removes an item from the cart. First it checks if the item was already in the cart before determining which to do.
 
 ```js
-
+const putItemCart = (item) => {
+        let check = props.cartItems.filter((n) => n._id === props.item._id);
+        let itemsCopy = []
+        if (check.length >= 1) {
+            itemsCopy = props.cartItems.filter((n) => n._id != props.item._id);
+            setCartRemove(true)
+            setTimeout(function() {
+                setCartRemove(false);
+                }, 1000);
+        } else {
+            itemsCopy = [...props.cartItems];
+            itemsCopy.push(item);
+            setCartSuccess(true)
+            setTimeout(function() {
+                setCartSuccess(false);
+                }, 1000);
+        }
+}
 ```
 
 ## Issues and Resolutions
 
 **ERROR**:
-
+I wanted to implement an alert for "added to cart". Needed it to disappear after a few seconds and show up onClick.
 
 **RESOLUTION**:
+Discovered the setTimeout() function so the alert would disappear after a set amount of time.
