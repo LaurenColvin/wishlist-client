@@ -29,8 +29,8 @@ const Category = (props) => {
   const [wardrobeItems, setWardrobeItems] = useState([]);
   const [editItem, setEditItem] = useState(false)
 
-  const fetchData = () => {
-    if (props.currentUser != "") {
+  useEffect(() => {
+    if (props.currentUser !== "") {
       fetch(props.urlBase + "/user/" + props.currentUser )
         .then((response) => response.json())
         .then((data) => setUserData(data.user))
@@ -39,23 +39,19 @@ const Category = (props) => {
         .then((response) => response.json())
         .then((data) => setUserData(data.user))
     }
-  }
+  }, [showModal, editItem]);
 
   useEffect(() => {
-      fetchData()
-    }, [showModal, editItem]);
-
-  useEffect(() => {
-    if (userData.categories != undefined) {
+    if (userData.categories !== undefined) {
       setCategoryList(userData.categories)
     }
-    if (userData.wishlistItems != undefined) {
+    if (userData.wishlistItems !== undefined) {
       setItems(userData.wishlistItems)
     }
-    if (userData.cartItems != undefined) {
+    if (userData.cartItems !== undefined) {
       setCartItems(userData.cartItems)
     }
-    if (userData.wardrobeItems != undefined) {
+    if (userData.wardrobeItems !== undefined) {
       setWardrobeItems(userData.wardrobeItems)
     }
   }, [userData])
@@ -93,7 +89,7 @@ const Category = (props) => {
 
   const handleDeleteCategory = (event) => {
     event.preventDefault()
-    const categoriesFilter = categoryList.filter((n) => n != event.target.id)
+    const categoriesFilter = categoryList.filter((n) => n !== event.target.id)
     let data = {
       categories: categoriesFilter,
     };
@@ -126,7 +122,7 @@ const Category = (props) => {
           <div className='welcome-box'>
               <h1>What have you been dreaming about?</h1>
           </div>
-          { props.currentUser == "" ? (
+          { props.currentUser === "" ? (
               <div className='no-user' >
                   <button onClick={handleShow} className='login-category'>Login to add categories of your own!</button>
                   <h3>Trending Categories:</h3>
@@ -138,12 +134,12 @@ const Category = (props) => {
                 <input onChange={categoryHandleChange} className="text-box" name="category" placeholder="Shopping for..." value={category} type="text" required/>
               <input className="submit-button" type="submit" value="Create New Category"></input>
             </form>
-            {categoryList.length == 0 ? (
+            {categoryList.length === 0 ? (
               <div></div>
             ):(<div className="category-list">{list}</div>)}
           </div>
           )}
-          { showModal == true ? (
+          { showModal === true ? (
               <Login handleClose={handleClose} urlBase={props.urlBase} currentUser={props.currentUser} setCurrentUser={props.setCurrentUser} userName={props.userName} setUsername={props.setUsername}/>
           ):(
               <div></div>

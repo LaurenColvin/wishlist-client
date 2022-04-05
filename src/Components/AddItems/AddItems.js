@@ -10,16 +10,12 @@ const AddItems = (props) => {
 
     const [allItems, setAllItems] = useState([]);
 
-    const fetchData = () => {
-        if (props.currentUser != "") {
+    useEffect(() => {
+        if (props.currentUser !== "") {
             fetch(props.urlBase + "/user/" + props.currentUser )
             .then((response) => response.json())
             .then((data) => setAllItems(data.user.wishlistItems))
         }
-    }
-
-    useEffect(() => {
-        fetchData()
       }, []);
 
 

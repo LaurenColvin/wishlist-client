@@ -22,25 +22,18 @@ const User = (props) => {
   const [userData, setUserData] = useState({});
   const [wardrobeItems, setWardrobeItems] = useState([]);
 
-  const fetchData = () => {
+  useEffect(() => {
     fetch(props.urlBase + "/user/" + props.currentUser)
       .then((response) => response.json())
       .then((data) => setUserData(data.user));
-  };
+  }, [showModal]);
 
   useEffect(() => {
-    fetchData();
-  }, []);
-
-  useEffect(() => {
-    if (userData.wardrobeItems != undefined) {
+    if (userData.wardrobeItems !== undefined) {
       setWardrobeItems(userData.wardrobeItems);
     }
   }, [userData]);
 
-  useEffect(() => {
-    fetchData();
-  }, [showModal]);
 
   //////////////////// MAP THROUGH WARDROBE AND ARCHIVE ITEMS ////////////////////
 
@@ -68,7 +61,7 @@ const User = (props) => {
       <div className="user-box">
         <h1>Shop Smarter, Not Harder!</h1>
       </div>
-      {props.currentUser == "" ? (
+      {props.currentUser === "" ? (
         <div className="login-container">
           <button onClick={handleShow} className="login-container-button">
             Login
@@ -94,7 +87,7 @@ const User = (props) => {
           </div>
         </div>
       )}
-      {showModal == true ? (
+      {showModal === true ? (
         <Login
           handleClose={handleClose}
           urlBase={props.urlBase}

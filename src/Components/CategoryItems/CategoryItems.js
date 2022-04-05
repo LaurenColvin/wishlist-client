@@ -70,21 +70,20 @@ const CategoryItems = (props) => {
     const [categoryItems, setCategoryItems] = useState([])
 
     useEffect(() => {
-    let itemsList = props.items.filter((n) => n.category.toLowerCase() == props.category.toLowerCase());
+    let itemsList = props.items.filter((n) => n.category.toLowerCase() === props.category.toLowerCase());
     setCategoryItems(itemsList)  
       }, []);
 
     useEffect(() => {
-    let itemsList = props.items.filter((n) => n.category.toLowerCase() == props.category.toLowerCase());
+    let itemsList = props.items.filter((n) => n.category.toLowerCase() === props.category.toLowerCase());
     setCategoryItems(itemsList)  
         }, [props.items.length]);
 
     const handleDeleteItem = (event) => {
         event.preventDefault()
-        fetch(props.urlBase + '/item/' + event.target.id, {
-            method: "DELETE",
-          }).then((response) => response.json());
-        props.setEditItem(!props.editItem)
+        fetch(props.urlBase + '/item/' + event.target.id, {method: "DELETE",})
+            .then((response) => response.json())
+            .then(()=> props.setEditItem(!props.editItem))
         setShowMenu(false);
         setDeleteX(false);
     }
@@ -98,10 +97,10 @@ const CategoryItems = (props) => {
 
     return (
         <div className='category-box'>
-            { props.currentUser == '' ? (
+            { props.currentUser === '' ? (
                 <div className ='category-header'>
                         <h2>{props.category}</h2>
-                        {showMore == true ? (
+                        {showMore === true ? (
                                 <FontAwesomeIcon onClick={handleShowMore} className="view-more-icon" icon={faAngleUp} size="2x" style={{color:"#FEFCF5"}}/>
                             ):(
                                 <FontAwesomeIcon onClick={handleShowMore} className="view-more-icon" icon={faAngleDown} size="2x" style={{color:"#FEFCF5"}}/>
@@ -111,9 +110,9 @@ const CategoryItems = (props) => {
                 ):(
                 <div className ='category-header'>
                     <h2>{props.category}</h2>
-                    {categoryItems.length == 0 ? (<div></div>):(
+                    {categoryItems.length === 0 ? (<div></div>):(
                         <div>
-                            {showMore == true ? (
+                            {showMore === true ? (
                                 <FontAwesomeIcon onClick={handleShowMore} className="view-more-icon" icon={faAngleUp} size="2x" style={{color:"#FEFCF5"}}/>
                             ):(
                                 <FontAwesomeIcon onClick={handleShowMore} className="view-more-icon" icon={faAngleDown} size="2x" style={{color:"#FEFCF5"}}/>
@@ -124,10 +123,10 @@ const CategoryItems = (props) => {
                     <FontAwesomeIcon onClick={handleMenu} className="more-icon" icon={faEllipsis} size="2x" style={{color:"#FEFCF5"}}/>
                 </div>
             )}
-            {categoryItems.length == 0 ? (
+            {categoryItems.length === 0 ? (
                 <div>
 
-                    { showMenu == true ? (
+                    { showMenu === true ? (
                         <div className='no-item-category-menu'>
                             <button className='mobile-button' onClick={handleShow}>Add New Item</button>
                             <button className='category-button' onClick={handleDeleteItems}>Delete Item</button>
@@ -141,7 +140,7 @@ const CategoryItems = (props) => {
                 </div>
             ):(
                 <div>
-                    { showMenu == true ? (
+                    { showMenu === true ? (
                         <div className='category-menu'>
                             <button className='mobile-button' onClick={handleShow}>Add New Item</button>
                             <button className='category-button' onClick={handleDeleteItems}>Delete Item</button>
@@ -150,10 +149,10 @@ const CategoryItems = (props) => {
                     ):(
                         <div></div>
                     )}
-                    {showMore == false ? (<div className='category-items'>{list}</div>):(<h3 className='item-count'><span>{categoryItems.length}</span> items saved . . .</h3>)}
+                    {showMore === false ? (<div className='category-items'>{list}</div>):(<h3 className='item-count'><span>{categoryItems.length}</span> items saved . . .</h3>)}
                 </div>
             )}
-            { showModal == true ? (
+            { showModal === true ? (
                 <AddItems handleClose={handleClose} urlBase={props.urlBase} currentUser={props.currentUser} category={props.category} setItems={props.setItems} items={props.items} />
             ):(
                 <div></div>

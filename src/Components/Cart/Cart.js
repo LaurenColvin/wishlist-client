@@ -26,37 +26,29 @@ const Cart = (props) => {
     const [wishlistItems, setWishlistItems] = useState([])
     const [wardrobeItems, setWardrobeItems] = useState([])
 
-    const fetchData = () => {
+    useEffect(() => {
         fetch(props.urlBase + "/user/" + props.currentUser )
           .then((response) => response.json())
           .then((data) => setUserData(data.user))
-    }
-
-    useEffect(() => {
-        fetchData()
-      }, []);
+      }, [showModal]);
   
     useEffect(() => {
-      if (userData.cartItems != undefined) {
+      if (userData.cartItems !== undefined) {
          setCartItems(userData.cartItems)
       }
-      if (userData.wishlistItems != undefined) {
+      if (userData.wishlistItems !== undefined) {
         setWishlistItems(userData.wishlistItems)
      }
-     if (userData.wardrobeItems != undefined) {
+     if (userData.wardrobeItems !== undefined) {
         setWardrobeItems(userData.wardrobeItems)
      }
     }, [userData])
-
-    useEffect(() => {
-        fetchData()
-    }, [showModal]);
 
     
     //////////////////// PURCHASE ITEM FUNCTIONS ////////////////////
 
     const removeWishlistItems = (item) => {
-        const wishlistFilter = wishlistItems.filter((n) => n._id != item)
+        const wishlistFilter = wishlistItems.filter((n) => n._id !== item)
         let data = {
         wishlistItems: wishlistFilter,
         };
@@ -72,7 +64,7 @@ const Cart = (props) => {
     }
 
     const removeCartItems = (item) => {
-        const cartFilter = cartItems.filter((n) => n._id != item)
+        const cartFilter = cartItems.filter((n) => n._id !== item)
         setCartItems(cartFilter)
         let data = {
         cartItems: cartFilter,
@@ -128,7 +120,7 @@ const Cart = (props) => {
 
         const removeItem = (event) => {
             event.preventDefault();
-            let itemsCopy = cartItems.filter((n) => n._id != event.target.id);
+            let itemsCopy = cartItems.filter((n) => n._id !== event.target.id);
             setCartItems(itemsCopy)
             let data = {
             cartItems: itemsCopy,
@@ -162,7 +154,7 @@ const Cart = (props) => {
             <div className='cart-box'>
                 <h1>You found your dream piece!</h1>
             </div>
-            { props.currentUser == "" ? (
+            { props.currentUser === "" ? (
                 <div className='login-container'>
                     <button onClick={handleShow} className='login-container-button'>Login</button>
                 </div>
@@ -179,7 +171,7 @@ const Cart = (props) => {
                     </div>
                 </div>
             )}
-            { showModal == true ? (
+            { showModal === true ? (
                 <Login handleClose={handleClose} urlBase={props.urlBase} currentUser={props.currentUser} setCurrentUser={props.setCurrentUser} userName={props.userName} setUsername={props.setUsername}/>
               ):(
                 <div></div>

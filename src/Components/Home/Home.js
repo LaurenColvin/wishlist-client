@@ -79,7 +79,7 @@ const Home = (props) => {
           </div>
         </div>
       </div>
-      {props.currentUser != "" ? (
+      {props.currentUser !== "" ? (
         <div className="user-login">
           <h2>Ready to get started?</h2>
           <Link to="/my-wishlist">
@@ -108,7 +108,7 @@ const Home = (props) => {
           </div>
         </Link>
       </div>
-      {showModal == true ? (
+      {showModal === true ? (
         <Login
           handleClose={handleClose}
           urlBase={props.urlBase}
